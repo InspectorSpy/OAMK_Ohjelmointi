@@ -86,6 +86,23 @@ void vertaileLukuja() {
         printf("Luvut ovat yhtäsuuria.\n");
 }
 
+void viikonpaiva() {
+    int paiva;
+    printf("Anna viikonpäivän numero (1-7): ");
+    scanf("%d", &paiva);
+
+    switch(paiva) {
+        case 1: printf("Maanantai\n"); break;
+        case 2: printf("Tiistai\n"); break;
+        case 3: printf("Keskiviikko\n"); break;
+        case 4: printf("Torstai\n"); break;
+        case 5: printf("Perjantai\n"); break;
+        case 6: printf("Lauantai\n"); break;
+        case 7: printf("Sunnuntai\n"); break;
+        default: printf("Annoit numeron, jolle ei ole viikonpäivää\n"); break;
+    }
+}
+
 int main() {
     setlocale(LC_ALL, "");
     int valinta;
@@ -98,6 +115,7 @@ int main() {
         printf("4. 3x3 taulukko\n");
         printf("5. Vertailu <=> 10\n");
         printf("6. Vertaile numeroita\n");
+        printf("7. Viikonpäivä\n");
         printf("0. Sulje\n");
         printf("Valitse ohjelma: ");
         scanf("%d", &valinta);
@@ -109,6 +127,7 @@ int main() {
             case 4: taulukko(); break;
             case 5: vertaile10(); break;
             case 6: vertaileLukuja(); break;
+            case 7: viikonpaiva(); break;
             case 0: printf("Suljetaan...\n"); return 0;
             default: printf("Väärä valinta. Kokkeile uudelleen.\n"); break;
         }
