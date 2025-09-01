@@ -9,6 +9,8 @@ void C2F() {
     scanf("%f", &cels);
     float fahren = (cels * 1.80) + 32.0;
     printf("%.2f cels equals around %.2f fahren\n", cels, fahren);
+
+    printf("\n");
 }
 
 // Funktio kolmion pinta-alalle
@@ -20,6 +22,8 @@ void kolmionAla() {
     scanf("%d", &korkeus);
     ala = (korkeus * kanta) / 2;
     printf("Kolmion ala on: %d", ala);
+
+    printf("\n");
 }
 
 // Funktio peruslaskuille
@@ -41,6 +45,8 @@ void perusLaskut() {
     printf("Lukujen erotus on: %d\n", erotus);
     printf("Lukujen tulo on: %d\n", tulo);
     printf("Lukujen osamäärä on: %.2f\n", osamaara);
+
+    printf("\n");
 }
 
 // Funktio taululle 3x3
@@ -56,54 +62,63 @@ void taulukko() {
     printf("\nTaulukon 1. rivin luku on %d\n", taulukko[0][2]);
     printf("Taulukon 2. rivin luku on %d\n", taulukko[1][1]);
     printf("Taulukon 3. rivin luku on %d\n", taulukko[2][0]);
+
+    printf("\n");
 }
 
 // Funktio <=> 10
 void vertaile10() {
-    int luku1;
-    printf("Anna kokonaisluku: ");
-    scanf("%d", &luku1);
-    if (luku1 < 10)
-        printf("Antamasi luku on pienempi kuin 10.\n");
-    else if (luku1 > 10)
-        printf("Lukusi on suurempi kuin 10.\n");
-    else
-        printf("Lukusi on yhtäsuuri kuin 10.\n");
+  int luku1;
+  printf("Anna kokonaisluku: ");
+  scanf("%d", &luku1);
+  if (luku1 < 10)
+    printf("Antamasi luku on pienempi kuin 10.\n");
+  else if (luku1 > 10)
+    printf("Lukusi on suurempi kuin 10.\n");
+  else
+    printf("Lukusi on yhtäsuuri kuin 10.\n");
+
+  printf("\n");
 }
 
 // Funktio lukujen vertailuun
 void vertaileLukuja() {
-    int luku1, luku2;
-    printf("Anna ensimmäinen kokonaisluku: ");
-    scanf("%d", &luku1);
-    printf("Anna toinen kokonaisluku: ");
-    scanf("%d", &luku2);
+  int luku1, luku2;
+  printf("Anna ensimmäinen kokonaisluku: ");
+  scanf("%d", &luku1);
+  printf("Anna toinen kokonaisluku: ");
+  scanf("%d", &luku2);
 
-    if (luku1 > luku2)
-        printf("Ensimmäinen luku on suurempi kuin toinen luku.\n");
-    else if (luku1 < luku2)
-        printf("Toinen luku on suurempi kuin ensimmäinen luku.\n");
-    else
-        printf("Luvut ovat yhtäsuuria.\n");
+  if (luku1 > luku2)
+    printf("Ensimmäinen luku on suurempi kuin toinen luku.\n");
+  else if (luku1 < luku2)
+    printf("Toinen luku on suurempi kuin ensimmäinen luku.\n");
+  else
+    printf("Luvut ovat yhtäsuuria.\n");
+
+  printf("\n");
 }
 
+// Valitse viikonpäivä
 void viikonpaiva() {
-    int paiva;
-    printf("Anna viikonpäivän numero (1-7): ");
-    scanf("%d", &paiva);
+  int paiva;
+  printf("Anna viikonpäivän numero (1-7): ");
+  scanf("%d", &paiva);
 
-    switch(paiva) {
-        case 1: printf("Maanantai\n"); break;
-        case 2: printf("Tiistai\n"); break;
-        case 3: printf("Keskiviikko\n"); break;
-        case 4: printf("Torstai\n"); break;
-        case 5: printf("Perjantai\n"); break;
-        case 6: printf("Lauantai\n"); break;
-        case 7: printf("Sunnuntai\n"); break;
-        default: printf("Annoit numeron, jolle ei ole viikonpäivää\n"); break;
-    }
+  switch(paiva) {
+    case 1: printf("Maanantai\n"); break;
+    case 2: printf("Tiistai\n"); break;
+    case 3: printf("Keskiviikko\n"); break;
+    case 4: printf("Torstai\n"); break;
+    case 5: printf("Perjantai\n"); break;
+    case 6: printf("Lauantai\n"); break;
+    case 7: printf("Sunnuntai\n"); break;
+    default: printf("Annoit numeron, jolle ei ole viikonpäivää\n"); break;
+  }
+  printf("\n");
 }
 
+// Laske kuukauden ostojen alennukset
 void kuukaudenOstot() {
   float ostot, alennus_prosentti, alennukset, lopullinen;
   printf("Kuukauden ostosten määrä: ");
@@ -122,8 +137,10 @@ void kuukaudenOstot() {
   printf("Olet ostanut %.2f€:lla ja saanut alennusta %.0f%%. ",
         ostot, alennus_prosentti);
   printf("Ostosten lopullinen summa on %.2f€\n", lopullinen);
+  printf("\n");
 }
 
+// Tulosta opiskelijan suoritusten keskiarvo yms
 void opiskelijaID() {
 // Versio 1 taulukoilla //
 /* char nimi[30], id[10];
@@ -215,9 +232,9 @@ void opiskelijaID() {
   scanf(" %[^\n]", nimi);
 
   for (int i = 0; i < 3; i++) {
-      printf("Suoritus %d pisteet (0-100): ", i + 1);
-      scanf("%d", &suorite[i]);
-      yhteispisteet += suorite[i];
+    printf("Suoritus %d pisteet (0-100): ", i + 1);
+    scanf("%d", &suorite[i]);
+    yhteispisteet += suorite[i];
   }
 
   keskiarvo = (float)yhteispisteet / 3.0;
@@ -241,6 +258,8 @@ void opiskelijaID() {
   printf("Pisteet yhteensä = %d\n", yhteispisteet);
   printf("Keskiarvo = %.2f\n", keskiarvo);
   printf("Arvosanateksti = %s\n", arvosana_teksti);
+
+  printf("\n");
 
 }
 
