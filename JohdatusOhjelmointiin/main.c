@@ -10,7 +10,6 @@ void C2F() {
     float fahren = (cels * 1.80) + 32.0;
     printf("%.2f cels equals around %.2f fahren\n", cels, fahren);
 
-    printf("\n");
 }
 
 // Funktio kolmion pinta-alalle
@@ -21,9 +20,7 @@ void kolmionAla() {
     printf("Kolmion korkeus on: ");
     scanf("%d", &korkeus);
     ala = (korkeus * kanta) / 2;
-    printf("Kolmion ala on: %d", ala);
-
-    printf("\n");
+    printf("Kolmion ala on: %d\n", ala);
 }
 
 // Funktio peruslaskuille
@@ -45,8 +42,6 @@ void perusLaskut() {
     printf("Lukujen erotus on: %d\n", erotus);
     printf("Lukujen tulo on: %d\n", tulo);
     printf("Lukujen osamäärä on: %.2f\n", osamaara);
-
-    printf("\n");
 }
 
 // Funktio taululle 3x3
@@ -62,8 +57,6 @@ void taulukko() {
     printf("\nTaulukon 1. rivin luku on %d\n", taulukko[0][2]);
     printf("Taulukon 2. rivin luku on %d\n", taulukko[1][1]);
     printf("Taulukon 3. rivin luku on %d\n", taulukko[2][0]);
-
-    printf("\n");
 }
 
 // Funktio <=> 10
@@ -77,8 +70,6 @@ void vertaile10() {
     printf("Lukusi on suurempi kuin 10.\n");
   else
     printf("Lukusi on yhtäsuuri kuin 10.\n");
-
-  printf("\n");
 }
 
 // Funktio lukujen vertailuun
@@ -95,8 +86,6 @@ void vertaileLukuja() {
     printf("Toinen luku on suurempi kuin ensimmäinen luku.\n");
   else
     printf("Luvut ovat yhtäsuuria.\n");
-
-  printf("\n");
 }
 
 // Valitse viikonpäivä
@@ -115,7 +104,6 @@ void viikonpaiva() {
     case 7: printf("Sunnuntai\n"); break;
     default: printf("Annoit numeron, jolle ei ole viikonpäivää\n"); break;
   }
-  printf("\n");
 }
 
 // Laske kuukauden ostojen alennukset
@@ -137,12 +125,11 @@ void kuukaudenOstot() {
   printf("Olet ostanut %.2f€:lla ja saanut alennusta %.0f%%. ",
         ostot, alennus_prosentti);
   printf("Ostosten lopullinen summa on %.2f€\n", lopullinen);
-  printf("\n");
 }
 
 // Tulosta opiskelijan suoritusten keskiarvo yms
 void opiskelijaID() {
-// Versio 1 taulukoilla //
+// __ Versio 1 taulukoilla __ //
 /* char nimi[30], id[10];
   int suorite[3];
   float keskiarvo;
@@ -176,7 +163,7 @@ void opiskelijaID() {
     printf("\nArvosana = Hylätty");
   } */
 
-  // Versio 2 ilman taulukkoja strcpyllä //
+  // __ Versio 2 ilman taulukkoja strcpyllä __ //
   // (kopio tieto kohteesta A kohteeseen B) //
 
   /*int id, suorite1, suorite2, suorite3, pisteet;
@@ -216,7 +203,7 @@ void opiskelijaID() {
   printf("Keskiarvo: %.2f\n", keskiarvo);
   printf("Arvosana: %s\n", arvosana);*/
 
-  // Versio 3, v1 ja v2 yhdistetty //
+  // __ Versio 3, v1 ja v2 yhdistetty __ //
 
   char nimi[30], id[10];
   int suorite[3];
@@ -258,9 +245,6 @@ void opiskelijaID() {
   printf("Pisteet yhteensä = %d\n", yhteispisteet);
   printf("Keskiarvo = %.2f\n", keskiarvo);
   printf("Arvosanateksti = %s\n", arvosana_teksti);
-
-  printf("\n");
-
 }
 
 int main() {
