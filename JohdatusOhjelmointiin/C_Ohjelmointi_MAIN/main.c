@@ -115,8 +115,6 @@ void kuukaudenOstot() {
       alennus_prosentti = 10;
   } else if (ostot < 300) {
       alennus_prosentti = 15;
-  } else if (ostot < 100) {
-      alennus_prosentti = 10;
   } else {
       alennus_prosentti = 25;
 }
@@ -130,7 +128,8 @@ void kuukaudenOstot() {
 // Tulosta opiskelijan suoritusten keskiarvo yms
 void opiskelijaID() {
 // __ Versio 1 taulukoilla __ //
-/* char nimi[30], id[10];
+/* char nimi[30]printf("\nId: %s\nName: %s\nScore1: %d\nScore2: %d\nScore3: %d\nTotal score = %d\nAverage = %.2f", id, name, scores[0], scores[1], scores[2], (scores[0] + scores[1] + scores[2]), average);
+    // Check for grade, id[10];
   int suorite[3];
   float keskiarvo;strcpy
 
