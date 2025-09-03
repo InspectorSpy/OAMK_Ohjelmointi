@@ -115,6 +115,8 @@ void kuukaudenOstot() {
       alennus_prosentti = 10;
   } else if (ostot < 300) {
       alennus_prosentti = 15;
+  } else if (ostot < 500) {
+      alennus_prosentti = 20;
   } else {
       alennus_prosentti = 25;
 }
@@ -128,8 +130,7 @@ void kuukaudenOstot() {
 // Tulosta opiskelijan suoritusten keskiarvo yms
 void opiskelijaID() {
 // __ Versio 1 taulukoilla __ //
-/* char nimi[30]printf("\nId: %s\nName: %s\nScore1: %d\nScore2: %d\nScore3: %d\nTotal score = %d\nAverage = %.2f", id, name, scores[0], scores[1], scores[2], (scores[0] + scores[1] + scores[2]), average);
-    // Check for grade, id[10];
+/* char nimi[30], id[10];
   int suorite[3];
   float keskiarvo;strcpy
 
@@ -254,6 +255,13 @@ void viisiKertaa() {
   }
 }
 
+void salanumero() {
+  int numero;
+  printf("Anna salanumero: \n");
+  scanf("%d", &numero);
+
+}
+
 int main() {
     setlocale(LC_ALL, "");
     int valinta;
@@ -270,6 +278,7 @@ int main() {
         printf("8. Kuukausi ostokset\n");
         printf("9. OpiskelijaID\n");
         printf("10. Viisi kertaa 100\n");
+        printf("11. Salanumero\n");
         printf("0. Sulje\n");
         printf("Valitse ohjelma: ");
         scanf("%d", &valinta);
@@ -285,6 +294,7 @@ int main() {
             case 8: kuukaudenOstot(); break;
             case 9: opiskelijaID(); break;
             case 10: viisiKertaa(); break;
+            case 11: salanumero(); break;
             case 0: printf("Suljetaan...\n"); return 0;
             default: printf("Väärä valinta. Kokkeile uudelleen.\n"); break;
         }
