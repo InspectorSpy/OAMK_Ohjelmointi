@@ -135,10 +135,10 @@ void opiskelijaID() {
   float keskiarvo;strcpy
 
   printf("ID: ");
-  scanf("%s", &id);
+  scanf("%9s", &id);
 
   printf("Nimi: ");
-  scanf("%s", &nimi);
+  scanf("%29s", &nimi);
 
   printf("Kurssi 1 arvosana: \n");
   scanf("%d", &suorite[0]);
@@ -214,7 +214,7 @@ void opiskelijaID() {
   int rajat[] = {0, 40, 60, 80};
 
   printf("Anna ID: ");
-  scanf("%s", id);
+  scanf("%9s", id);
   printf("Anna nimi: ");
   scanf(" %[^\n]", nimi);
 
@@ -255,11 +255,34 @@ void viisiKertaa() {
   }
 }
 
+void kayttajanNimi() {
+  char nimi[30];
+  int tulostus, i;
+
+  printf("Anna nimi: \n");
+  scanf("%29s", nimi);
+  printf("Montako kertaa nimi tulostetaan? . \n");
+  scanf("%d", &tulostus);
+
+  printf("\nTulostus while rakenteella\n");
+  i = 0;
+  while (i < tulostus) {
+    printf("%s\n", nimi);
+    i++;
+  }
+
+
+}
+
 void salanumero() {
   int numero;
   printf("Anna salanumero: \n");
   scanf("%d", &numero);
 
+  switch(numero) {
+  case 17: printf("Oikea vastaus\n"); break;
+  default: printf("Väärä vastaus\n"); break;
+  }
 }
 
 int main() {
@@ -278,7 +301,8 @@ int main() {
         printf("8. Kuukausi ostokset\n");
         printf("9. OpiskelijaID\n");
         printf("10. Viisi kertaa 100\n");
-        printf("11. Salanumero\n");
+        printf("11. Käyttäjän nimi\n");
+        printf("12. Salanumero\n");
         printf("0. Sulje\n");
         printf("Valitse ohjelma: ");
         scanf("%d", &valinta);
@@ -294,7 +318,8 @@ int main() {
             case 8: kuukaudenOstot(); break;
             case 9: opiskelijaID(); break;
             case 10: viisiKertaa(); break;
-            case 11: salanumero(); break;
+            case 11: kayttajanNimi(); break;
+            case 12: salanumero(); break;
             case 0: printf("Suljetaan...\n"); return 0;
             default: printf("Väärä valinta. Kokkeile uudelleen.\n"); break;
         }
