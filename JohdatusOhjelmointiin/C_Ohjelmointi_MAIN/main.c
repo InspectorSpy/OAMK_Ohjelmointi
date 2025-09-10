@@ -270,8 +270,6 @@ void kayttajanNimi() {
     printf("%s\n", nimi);
     i++;
   }
-
-
 }
 
 void salanumero() {
@@ -282,6 +280,50 @@ void salanumero() {
   switch(numero) {
   case 17: printf("Oikea vastaus\n"); break;
   default: printf("Väärä vastaus\n"); break;
+  }
+}
+
+void kymmenKerto() {
+  int numero;
+  printf("Anna numero: ");
+  scanf("%d", &numero);
+
+  int i;
+  for (i = 1; i <= 10; i++) {
+    printf("%d*%d=%d\n", numero, i, numero * i);
+  }
+}
+
+void kokonaisLuku() {
+  int luku, summa = 0;
+  printf("Anna kokonaisluku: ");
+  scanf("%d", &luku);
+
+  for (int i = 0; i <= luku; i++) {
+      if(i % 2 == 0) {
+          summa += i;
+      }
+  }
+  printf("Lukujen summa on: %d\n", summa);
+}
+
+void valikkoCase() {
+  int valinta;
+  while (valinta != 0)
+  {
+      printf("Valikko:\n");
+      printf("1. Neliön kehän pituus\n");
+      printf("2. Ympyrän kehän pituus\n");
+      printf("0. Lopeta\n");
+      printf("Valitse ohjelma: ");
+      scanf("%d", &valinta);
+
+  switch (valinta) {
+      case 1: printf("Neliön kehän pituus valittu\n"); break;
+      case 2: printf("Ympyrän kehän pituus valittu\n"); break;
+      case 0: printf("Suljetaan...\n"); break;
+      default: printf("Väärä valinta. Yritä uudelleen.\n"); break;
+    }
   }
 }
 
@@ -303,6 +345,9 @@ int main() {
         printf("10. Viisi kertaa 100\n");
         printf("11. Käyttäjän nimi\n");
         printf("12. Salanumero\n");
+        printf("13. Kymmenen kertaa\n");
+        printf("14. Kokonaislukujen summa\n");
+        printf("15. Valikko case\n");
         printf("0. Sulje\n");
         printf("Valitse ohjelma: ");
         scanf("%d", &valinta);
@@ -320,6 +365,9 @@ int main() {
             case 10: viisiKertaa(); break;
             case 11: kayttajanNimi(); break;
             case 12: salanumero(); break;
+            case 13: kymmenKerto(); break;
+            case 14: kokonaisLuku(); break;
+            case 15: valikkoCase(); break;
             case 0: printf("Suljetaan...\n"); return 0;
             default: printf("Väärä valinta. Kokkeile uudelleen.\n"); break;
         }
