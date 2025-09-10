@@ -68,11 +68,11 @@ void valikkoCase() {
   while (valinta != 0)
   {
       printf("Valikko:\n");
-  printf("1. Neliön kehän pituus\n");
-  printf("2. Ympyrän kehän pituus\n");
-  printf("0. Lopeta\n");
-  printf("Valitse ohjelma: ");
-  scanf("%d", &valinta);
+      printf("1. Neliön kehän pituus\n");
+      printf("2. Ympyrän kehän pituus\n");
+      printf("0. Lopeta\n");
+      printf("Valitse ohjelma: ");
+      scanf("%d", &valinta);
 
   switch (valinta) {
       case 1: printf("Neliön kehän pituus valittu\n"); break;
