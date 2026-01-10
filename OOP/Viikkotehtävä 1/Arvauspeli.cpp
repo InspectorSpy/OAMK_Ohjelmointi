@@ -34,7 +34,6 @@ int main()
     srand(time(NULL));
 
     cout << "Arvauspeli\n";
-    cout << "Arvaa numero 1-" << maxnum << " välillä\n";
 
     yritykset = game(maxnum);
 
