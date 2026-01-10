@@ -1,6 +1,7 @@
 /*
 Tehtävä 1/2
-Laadi ohjelma, joka pyytää pelaajaa arvaamaan tietokoneen arpoman satunnaisen luvun väliltä 1-20. Pelaajaa autetaan kertomalla onko hänen arvauksensa pienempi tai suurempi tai yhtäsuuri kuin etsittävä luku.Kun arvaus on yhtäsuuri kuin luku, peli päättyy.
+Laadi ohjelma, joka pyytää pelaajaa arvaamaan tietokoneen arpoman satunnaisen luvun väliltä 1-20.
+Pelaajaa autetaan kertomalla onko hänen arvauksensa pienempi tai suurempi tai yhtäsuuri kuin etsittävä luku.Kun arvaus on yhtäsuuri kuin luku, peli päättyy.
 1) Ensin kirjoita ohjelma main-funktion sisälle pääohjelmaksi. Ohjelman runko voisi olla jotain seuraavan kaltaista:
 Arvotaan satunnainen luku
 Kysytään pelaajalta arvaus
@@ -11,36 +12,45 @@ Testaa tässä vaiheessa ohjelman toimivuus, ennen tehtävän jatkamista seuraav
 
 Tehtävä 2/2
 2) Siirrä tehtävän ohjelma oman funktionsa sisälle niin, että sitä kutsutaan main-funktiosta. Lisää funktioon arvausten lukumäärän laskenta.
-Käytä funktion nimenä ja prototyyppinä int game();, joka palauttaa arvausten määrän pääohjelmaan. 
+Käytä funktion nimenä ja prototyyppinä int game();, joka palauttaa arvausten määrän pääohjelmaan.
 3) Muuta toteuttamaasi funktiota siten, että funktiolle annetaan parametriksi korkein etsittävä luku (maxnum), josta funktio arpoo satunnaisluvun.
 Esimerkiksi, jos tämä luku on 40, niin funktio arpoo luvun väliltä 1-40.
 Pelin loputtua tulosta arvausten määrä ruudulle main funktiosta paluuarvoa hyödyntäen. Käytä funktion nimenä ja prototyyppinä: int game(int maxnum);
 */
 
 #include <iostream>
-#include <stdlib.h>
 
 using namespace std;
 
-int main() {
-    srand(time(NULL));
-    int number = rand() % 100 + 1;
-    int guess = 0;
+int main()
+{
 
-    cout << "Arvaa luku väliltä 1-100: ";
+    int numero;
+    int arvaus;
+    int yritykset (0);
+
+    srand(time(NULL));
+    numero = (rand() % 100) + 1;
+
+    std::cout << "Arvauspeli\n";
 
     do {
-        cout << "Anna arvaus: ";
-        cin >> guess;
+        std::cout <<"Arvaa numero 1-100 välillä: ";
+        std::cin >> arvaus;
+        yritykset++;
 
-        if(guess > number) {
-            cout << "Luku on pienempi." << endl;
-        } else if(guess < number) { cout << "Luku on suurempi." << endl;
-        } else {
-            cout << "Oikea vastaus!" << endl;
-            exit(0);
+        if (arvaus > numero){
+            std::cout << "Liian iso numero.\n";
         }
-        } while(number != guess);
+        else if (arvaus < numero) {
+            std::cout << "Liian pieni numero.\n";
+        }
+        else {
+            std::cout << "Oikein, arvasit luvun " << yritykset << " yrityksessä\n";
+        }
+    } while (arvaus != numero);
+
+    std::cout << "Arvauspeli\n";
 
     return 0;
 }
