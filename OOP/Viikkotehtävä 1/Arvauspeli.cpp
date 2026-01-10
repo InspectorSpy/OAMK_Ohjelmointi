@@ -24,30 +24,30 @@ Pelin loputtua tulosta arvausten määrä ruudulle main funktiosta paluuarvoa hy
 
 using namespace std;
 
-int game(int maxnum); // proto
+int game(int maxnum); // Proto
 
 int main()
 {
-    int maxnum = 20;
-    int yritykset;
+    int maxnum = 20; // Korkein luku
+    int yritykset; // Arvaukset
 
-    srand(time(NULL));
+    srand(time(NULL)); // Alustus
 
     cout << "Arvauspeli\n";
 
-    yritykset = game(maxnum);
+    yritykset = game(maxnum); // Olio
 
     cout << "\nOnneksi olkoon! Arvasit luvun " << yritykset << " yrityksessä\n";
 
     return 0;
 }
 
-int game(int maxnum) {
+int game(int maxnum) { // Olio funktio
     int numero;
     int arvaus;
     int yritykset = 0;
 
-    numero = (rand() % maxnum) + 1;
+    numero = (rand() % maxnum) + 1; // Arvotaan numero
 
     do {
         cout << "Arvaa numero 1-" << maxnum << " välillä: ";
@@ -64,7 +64,7 @@ int game(int maxnum) {
             cout << "Oikein!\n";
         }
     }
-    while (arvaus != numero);
+    while (arvaus != numero); // Toista kunnes arvaus on oikein
 
-    return yritykset;
+    return yritykset; // Palauta arvausten määrä
 }
