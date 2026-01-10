@@ -5,6 +5,4 @@ OOP/Viikkotehtävä 1/Arvauspeli.pdb
 OOP/Viikkotehtävä 1/vc140.pdb
 .qtcreator\project.json
 .qtcreator\project.json.user
-.vscode\settings.json
-.vscode\launch.json
-.vscode\tasks.json
+.vscode/tasks.json
