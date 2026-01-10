@@ -51,7 +51,7 @@ int game(int maxnum) {
     numero = (rand() % maxnum) + 1;
 
     do {
-        cout <<"Arvaa numero 1-100 välillä: ";
+        cout << "Arvaa numero 1-" << maxnum << " välillä: ";
         cin >> arvaus;
         yritykset++;
 
