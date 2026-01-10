@@ -58,6 +58,14 @@ int game(int maxnum) {
         if (arvaus > numero) {
             cout << "Liian iso numero.\n";
         }
-        else if ()
+        else if (arvaus < numero) {
+            cout << "Liian pieni numero.\n";
+        }
+        else {
+            cout << "Oikein!\n";
+        }
     }
+    while (arvaus != numero);
+
+    return yritykset;
 }
