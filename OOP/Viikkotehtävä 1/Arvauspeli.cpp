@@ -19,38 +19,45 @@ Pelin loputtua tulosta arvausten määrä ruudulle main funktiosta paluuarvoa hy
 */
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
+int game(int maxnum); // proto
+
 int main()
 {
-
-    int numero;
-    int arvaus;
-    int yritykset (0);
+    int maxnum = 20;
+    int yritykset;
 
     srand(time(NULL));
-    numero = (rand() % 100) + 1;
 
-    std::cout << "Arvauspeli\n";
+    cout << "Arvauspeli\n";
+    cout << "Arvaa numero 1-" << maxnum << " välillä\n";
 
-    do {
-        std::cout <<"Arvaa numero 1-100 välillä: ";
-        std::cin >> arvaus;
-        yritykset++;
+    yritykset = game(maxnum);
 
-        if (arvaus > numero){
-            std::cout << "Liian iso numero.\n";
-        }
-        else if (arvaus < numero) {
-            std::cout << "Liian pieni numero.\n";
-        }
-        else {
-            std::cout << "Oikein, arvasit luvun " << yritykset << " yrityksessä\n";
-        }
-    } while (arvaus != numero);
-
-    std::cout << "Arvauspeli\n";
+    cout << "\nOnneksi olkoon! Arvasit luvun " << yritykset << " yrityksessä\n";
 
     return 0;
+}
+
+int game(int maxnum) {
+    int numero;
+    int arvaus;
+    int yritykset = 0;
+
+    numero = (rand() % maxnum) + 1;
+
+    do {
+        cout <<"Arvaa numero 1-100 välillä: ";
+        cin >> arvaus;
+        yritykset++;
+
+        if (arvaus > numero) {
+            cout << "Liian iso numero.\n";
+        }
+        else if ()
+    }
 }
