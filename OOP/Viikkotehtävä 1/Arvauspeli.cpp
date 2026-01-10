@@ -18,26 +18,29 @@ Pelin loputtua tulosta arvausten määrä ruudulle main funktiosta paluuarvoa hy
 */
 
 #include <iostream>
-#include <cstidlib>
-#include <ctime>
+#include <stdlib.h>
 
 using namespace std;
 
 int main() {
-    srand(static_cast<unsigned int>(time(0))); // satunnaisluvun alustaminen
+    srand(time(NULL));
+    int number = rand() % 100 + 1;
+    int guess = 0;
 
-    int salaNumero, arvaus, arvausMaara, arvauksienMaara, voitot = 0, tappiot = 0;
-    char pelaaUudelleen;
-
-    cout << "Welcome" << endl;
-    cout << "arvaaluku" << endl;
+    cout << "Arvaa luku väliltä 1-100: ";
 
     do {
-        salaNumero = rand() % 100 + 1;
-        arvausMaara = 7;
-        arvauksienMaara = 0;
+        cout << "Anna arvaus: ";
+        cin >> guess;
 
-        cout << "Numero generoitu väliltä 1-100. Sinulla on " << arvausMaara << " yritystä arvata se." << endl;
-    }
+        if(guess > number) {
+            cout << "Luku on pienempi." << endl;
+        } else if(guess < number) { cout << "Luku on suurempi." << endl;
+        } else {
+            cout << "Oikea vastaus!" << endl;
+            exit(0);
+        }
+        } while(number != guess);
+
     return 0;
 }
