@@ -19,11 +19,11 @@ Luokan toteutuksessa täytyy olla molemmat otsikkotiedosto Game.h ja luokan tote
 
 using namespace std;
 
-int game(int maxnum); // Proto
-
 Game::Game(int maxNum) {
     cout << "Maksimiluku on " << maxNum << endl;
     maxNumber = maxNum;
+    guessCount = 0;
+    
     randomNumber = (rand() % maxNumber) + 1;
 
     cout << "Satunnaisluku arvottu väliltä 1-" << maxNumber << endl;
