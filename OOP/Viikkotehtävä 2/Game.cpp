@@ -21,45 +21,48 @@ using namespace std;
 
 int game(int maxnum); // Proto
 
-int main()
-{
-    int maxnum = 20; // Korkein luku
-    int yritykset; // Arvaukset
+Game::Game(int maxNum) {
+    cout << "Maksimiluku on " << maxNum << endl;
+    maxNumber = maxNum;
+    randomNumber = (rand() % maxNumber) + 1;
 
-    srand(time(NULL)); // Alustus
-
-    cout << "Arvauspeli\n";
-
-    yritykset = game(maxnum); // Olio
-
-    cout << "\nOnneksi olkoon! Arvasit luvun " << yritykset << " yrityksessä\n";
-
-    return 0;
+    cout << "Satunnaisluku arvottu väliltä 1-" << maxNumber << endl;
 }
 
-int game(int maxnum) { // Olio funktio
-    int numero;
-    int arvaus;
-    int yritykset = 0;
+Game::~Game() {
+    cout << "Peli-olio tuhottu." << endl;
+}
 
-    numero = (rand() % maxnum) + 1; // Arvotaan numero
+void Game::play() {
+    cout << "Peli aloitettu!" << endl;
+    int arvaus;
 
     do {
-        cout << "Arvaa numero 1-" << maxnum << " välillä: ";
+        cout << "Arvaa numero 1-" << maxNumber << " välillä: ";
         cin >> arvaus;
-        yritykset++;
+        guessCount++;
 
-        if (arvaus > numero) {
-            cout << "Liian iso numero.\n";
+        cout << "Arvaus #" << guessCount << ": " << arvaus << endl;
+
+        if (arvaus > randomNumber) {
+            cout << "Liian iso numero." << endl;
         }
-        else if (arvaus < numero) {
-            cout << "Liian pieni numero.\n";
+        else if (arvaus < randomNumber) {
+            cout << "Liian pieni numero." << endl;
         }
         else {
-            cout << "Oikein!\n";
+            cout << "Oikein!" << endl;
         }
     }
-    while (arvaus != numero); // Toista kunnes arvaus on oikein
+    while (arvaus != randomNumber);
 
-    return yritykset; // Palauta arvausten määrä
+    cout << "Peli päättyi" << endl;
+}
+
+void Game::printGameResult() {
+    cout << "Tulostetaan pelin tulos..." << endl;
+    cout << "__________________________________" << endl;
+    cout << "Oikea numero oli :" << randomNumber << endl;
+    cout << "Arvasit luvun " << guessCount << " yrityksessä." << endl;
+    cout << "__________________________________" << endl;
 }
