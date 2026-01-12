@@ -12,3 +12,20 @@ Luokan toteutuksessa täytyy olla molemmat otsikkotiedosto Game.h ja luokan tote
 
 */
 
+#ifndef GAME_H
+#define GAME_H
+
+class Game {
+private:
+    int maxNumber;
+    int randomNumber;
+    int guessCount;
+
+public:
+    ~Game();
+    Game(int maxNum);
+    void play();
+    void printGameResult();
+};
+
+#endif

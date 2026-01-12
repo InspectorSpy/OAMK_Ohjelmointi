@@ -19,7 +19,47 @@ Luokan toteutuksessa täytyy olla molemmat otsikkotiedosto Game.h ja luokan tote
 
 using namespace std;
 
-Game::Game(int maxNumber) {
-    maxNumber = maxNum;
-    numOfGuesses = 0;
+int game(int maxnum); // Proto
+
+int main()
+{
+    int maxnum = 20; // Korkein luku
+    int yritykset; // Arvaukset
+
+    srand(time(NULL)); // Alustus
+
+    cout << "Arvauspeli\n";
+
+    yritykset = game(maxnum); // Olio
+
+    cout << "\nOnneksi olkoon! Arvasit luvun " << yritykset << " yrityksessä\n";
+
+    return 0;
+}
+
+int game(int maxnum) { // Olio funktio
+    int numero;
+    int arvaus;
+    int yritykset = 0;
+
+    numero = (rand() % maxnum) + 1; // Arvotaan numero
+
+    do {
+        cout << "Arvaa numero 1-" << maxnum << " välillä: ";
+        cin >> arvaus;
+        yritykset++;
+
+        if (arvaus > numero) {
+            cout << "Liian iso numero.\n";
+        }
+        else if (arvaus < numero) {
+            cout << "Liian pieni numero.\n";
+        }
+        else {
+            cout << "Oikein!\n";
+        }
+    }
+    while (arvaus != numero); // Toista kunnes arvaus on oikein
+
+    return yritykset; // Palauta arvausten määrä
 }
