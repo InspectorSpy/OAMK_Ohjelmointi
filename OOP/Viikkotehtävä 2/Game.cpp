@@ -35,26 +35,26 @@ Game::~Game() {
 
 void Game::play() {
     cout << "Peli aloitettu!" << endl;
-    int arvaus;
+    int guess;
 
     do {
         cout << "Arvaa numero 1-" << maxNumber << " välillä: ";
-        cin >> arvaus;
+        cin >> guess;
         guessCount++;
 
-        cout << "Arvaus #" << guessCount << ": " << arvaus << endl;
+        cout << "Arvaus #" << guessCount << ": " << guess << endl;
 
-        if (arvaus > randomNumber) {
+        if (guess > randomNumber) {
             cout << "Liian iso numero." << endl;
         }
-        else if (arvaus < randomNumber) {
+        else if (guess < randomNumber) {
             cout << "Liian pieni numero." << endl;
         }
         else {
             cout << "Oikein!" << endl;
         }
     }
-    while (arvaus != randomNumber);
+    while (guess != randomNumber);
 
     cout << "Peli päättyi" << endl;
 }
