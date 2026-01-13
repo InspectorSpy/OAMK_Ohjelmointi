@@ -1,13 +1,19 @@
 #include "Game.h"
 #include <iostream>
+#ifdef _WIN32
 #include <windows.h>
+#endif
+#include <ctime>
+#include <cstdlib>
 
 using namespace std;
 
 int main()
 {
+#ifdef _WIN32
     SetConsoleOutputCP(65001); // Konsoli utf-8
     SetConsoleCP(65001);
+#endif
 
     srand(time(NULL)); // Alustus
 
