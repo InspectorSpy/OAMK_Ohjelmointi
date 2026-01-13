@@ -1,3 +1,13 @@
+// Kääntäminen ja ajaminen, itse käytän g++
+/* Windowsissa:
+    Kääntäminen: g++ -o arvauspeli main.cpp Game.cpp
+    Ajaminen: ./arvauspeli.exe 
+*//*
+Linuxissa:
+    Kääntäminen: g++ -std=c++11 "main.cpp" "Game.cpp" -o arvauspeli
+    Ajaminen: ./arvauspeli
+*/
+
 #include "Game.h"
 #include <iostream>
 #ifdef _WIN32
