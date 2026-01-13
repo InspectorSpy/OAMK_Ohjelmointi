@@ -13,3 +13,13 @@ Keitto: yhteen annokseen tarvitaan 3 ainesta
 5 ainesta vettä
 9. makePizza() on privaatti siksi, että se on salainen ja sitä ei voi muuten kutsua kun tietämällä salasanan (muitakin tapoja tehdä tarkistus kyllä on..). 
 */
+
+#include "chef.h"
+#include <iostream>
+
+using namespace std;
+
+Chef::Chef(string chefName) : name(chefName) {
+    cout << "Chef " << name << " konstruktori" << endl;
+}
+

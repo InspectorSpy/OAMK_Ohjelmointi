@@ -20,13 +20,17 @@ Keitto: yhteen annokseen tarvitaan 3 ainesta
 using namespace std;
 
 italianChef::italianChef(string chefName) : Chef(chefName) {
-    cout << "Italian chef " << chefName << " konstruktori" << endl;
+    cout << "Italian chef " << name << " konstruktori" << endl;
 }
 
 italianChef::~italianChef() {
-    cout << "Italian chef " << chefName << " destruktori" << endl;
+    cout << "Italian chef " << name << " destruktori" << endl;
 }
 
 void italianChef::makePasta() const {
-    cout << "Italian chef " << chefName << " makes pasta" << endl;
+    cout << "Italian chef " << name << " makes pasta" << endl;
+}
+
+string italianChef::getName() const {
+    return name;
 }

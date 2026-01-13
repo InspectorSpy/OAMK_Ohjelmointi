@@ -22,7 +22,7 @@ using namespace std;
 
 class Chef {
 protected:
-    string chefName;
+    string name;
 
 public:
     Chef(string chefName);
