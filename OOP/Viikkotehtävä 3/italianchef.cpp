@@ -28,7 +28,11 @@ italianChef::~italianChef() {
 }
 
 void italianChef::makePizza(int flour, int water) const {
+    int pizzasFromFlour = flour / 5;
+    int pizzasFromWater = water / 5;
+    int pizzas = min(pizzasFromFlour, pizzasFromWater);
     cout << "Italian chef " << name << " makes pizza with " << flour << " flour and " << water << " water" << endl;
+    return pizzas;
 }
 
 string italianChef::getName() const {
