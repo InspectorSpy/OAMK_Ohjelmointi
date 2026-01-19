@@ -16,10 +16,11 @@ Keitto: yhteen annokseen tarvitaan 3 ainesta
 
 #include "italianchef.h"
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
-italianChef::italianChef(string chefName) : Chef(chefName) {
+italianChef::italianChef(string chefName) : Chef(chefName), password("pizza") {
     cout << "Italian chef " << name << " konstruktori" << endl;
 }
 
@@ -27,14 +28,22 @@ italianChef::~italianChef() {
     cout << "Italian chef " << name << " destruktori" << endl;
 }
 
-void italianChef::makePizza(int flour, int water) const {
+string italianChef::getName() const {
+    return name;
+}
+
+bool italianChef::askSecret(string secret, int flour, int water) {
+    if (secret == password) {
+        makePizza(flour, water);
+        return true;
+    }
+    return false;
+}
+
+int italianChef::makePizza(int flour, int water) {
     int pizzasFromFlour = flour / 5;
     int pizzasFromWater = water / 5;
     int pizzas = min(pizzasFromFlour, pizzasFromWater);
     cout << "Italian chef " << name << " makes pizza with " << flour << " flour and " << water << " water" << endl;
     return pizzas;
-}
-
-string italianChef::getName() const {
-    return name;
 }

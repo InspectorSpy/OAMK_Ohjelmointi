@@ -30,6 +30,7 @@ int main() {
     italianChef.makeSalad(5);
     italianChef.makeSoup(3);
     // italianChef.makePizza();
+    // italianChef.askSecret();
 
     cout << "name of the italian chef is " << italianChef.getName() << endl;
 
