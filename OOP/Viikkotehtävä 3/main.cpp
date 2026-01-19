@@ -15,9 +15,23 @@ Keitto: yhteen annokseen tarvitaan 3 ainesta
 */
 
 #include <iostream>
+#include "chef.h"
+#include "italianchef.h"
 
 using namespace std;
 
 int main() {
+
+    Chef chef("Jyrki Sukula");
+    chef.makeSalad(25);
+    chef.makeSoup(15);
+
+    italianChef italianChef("Giorgio Locatelli");
+    italianChef.makeSalad(25);
+    italianChef.makeSoup(15);
+    italianChef.makePasta();
+
+    cout << "name of the italian chef is " << italianChef.getName() << endl;
+
     return 0;
 }

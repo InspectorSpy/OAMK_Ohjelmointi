@@ -23,3 +23,16 @@ Chef::Chef(string chefName) : name(chefName) {
     cout << "Chef " << name << " konstruktori" << endl;
 }
 
+Chef::~Chef() {
+    cout << "Chef " << name << " destruktori" << endl;
+}
+
+int Chef::makeSalad(int ingredients) {
+    cout << "Chef " << name << " makes salad" << endl; 
+    return ingredients / 5;
+}
+
+int Chef::makeSoup(int ingredients) {
+    cout << "Chef " << name << " makes soup" << endl; 
+    return ingredients / 3;
+}
