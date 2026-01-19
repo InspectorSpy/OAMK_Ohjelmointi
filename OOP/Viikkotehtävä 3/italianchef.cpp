@@ -27,8 +27,8 @@ italianChef::~italianChef() {
     cout << "Italian chef " << name << " destruktori" << endl;
 }
 
-void italianChef::makePasta() const {
-    cout << "Italian chef " << name << " makes pasta" << endl;
+void italianChef::makePizza(int flour, int water) const {
+    cout << "Italian chef " << name << " makes pizza with " << flour << " flour and " << water << " water" << endl;
 }
 
 string italianChef::getName() const {

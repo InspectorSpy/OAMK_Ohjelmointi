@@ -27,9 +27,9 @@ int main() {
     chef.makeSoup(15);
 
     italianChef italianChef("Giorgio Locatelli");
-    italianChef.makeSalad(25);
-    italianChef.makeSoup(15);
-    italianChef.makePasta();
+    italianChef.makeSalad(5);
+    italianChef.makeSoup(3);
+    italianChef.makePizza(5, 5);
 
     cout << "name of the italian chef is " << italianChef.getName() << endl;
 

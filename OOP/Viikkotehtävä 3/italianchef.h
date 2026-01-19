@@ -21,10 +21,13 @@ Muut parametrit ovat ainesten eli jauhojen (flour) ja veden (water) määrä. Fu
 
 
 class italianChef : public Chef {
+private:
+    void makePizza(int flour, int water) const;
+    const string password = "pizza";
+
 public:
     italianChef(string chefName);
     ~italianChef();
-    void makePasta() const;
     string getName() const;
 };
 
