@@ -21,26 +21,13 @@ Keitto: yhteen annokseen tarvitaan 3 ainesta
 using namespace std;
 
 int main() {
-
-    Chef chef("Jyrki Sukula");
+    Chef chef("Mike");
     chef.makeSalad(25);
     chef.makeSoup(15);
 
     italianChef italianChef("Giorgio Locatelli");
     italianChef.makeSalad(5);
-    italianChef.makeSoup(3);
-    // italianChef.makePizza();
-    // italianChef.askSecret();
-
-    cout << "name of the italian chef is " << italianChef.getName() << endl;
-
-    // test askSecret
-    cout << "Test password function:" << endl;
-    bool result1 = italianChef.askSecret("pizza", 50, 50);
-    cout << "Password correct: " << (result1 ? "true" : "false") << endl;
-
-    bool result2 = italianChef.askSecret("wrong", 50, 50);
-    cout << "Password correct: " << (result2 ? "true" : "false") << endl;
+    italianChef.askSecret("pizza", 12, 12);
 
     return 0;
 }

@@ -28,11 +28,13 @@ Chef::~Chef() {
 }
 
 int Chef::makeSalad(int ingredients) {
-    cout << "Chef " << name << " makes salad" << endl; 
-    return ingredients / 5;
+    int portions = ingredients / 5;
+    cout << "Chef " << name << " with " << ingredients << " items can make salad " << portions << " portions" << endl; 
+    return portions;
 }
 
 int Chef::makeSoup(int ingredients) {
-    cout << "Chef " << name << " makes soup" << endl; 
-    return ingredients / 3;
+    int portions = ingredients / 3;
+    cout << "Chef " << name << " with " << ingredients << " items can make soup " << portions << " portions" << endl; 
+    return portions;
 }

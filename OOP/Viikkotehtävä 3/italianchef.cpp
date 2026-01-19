@@ -34,6 +34,7 @@ string italianChef::getName() const {
 
 bool italianChef::askSecret(string secret, int flour, int water) {
     if (secret == password) {
+        cout << "Password correct. Making pizza..." << endl;
         makePizza(flour, water);
         return true;
     }
