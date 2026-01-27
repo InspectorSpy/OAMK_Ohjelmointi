@@ -37,6 +37,17 @@ bool Pankkitili::deposit(double amount) {
     return true;
 }
 
+bool Pankkitili::withdraw(double amount) {
+    if (amount < 0) return false;
+    if (saldo - amount < 0) return false;
+    saldo -= amount;
+    return true;
+}
+
 double Pankkitili::getBalance() {
     return saldo;
+}
+
+Pankkitili::~Pankkitili() {
+
 }
