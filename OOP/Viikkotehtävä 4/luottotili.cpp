@@ -26,20 +26,29 @@ Tehtävän toisessa osassa harjoitellaan viittauksien käyttöä.
 
 #include "luottotili.h"
 
-Luottotili::Luottotili(string nimi, double raja) : Pankkitili(nimi), luottoRaja(raja) {
+Luottotili::Luottotili(string nimi, double raja) : Pankkitili(nimi) {
+    luottoRaja = raja;
     saldo = 0;
 }
 
-bool Luottotili::deposit(double amount) {
-    if (amount < 0) return false;
-    if (saldo + amount > 0) return false;
-    saldo += amount;
-    return true;
+Luottotili::~Luottotili() {
+
 }
 
 bool Luottotili::withdraw(double amount) {
     if (amount < 0) return false;
-    if (saldo - amount < -luottoRaja) return false;
+    if ((saldo - amount) < -luottoRaja) {
+        return false;
+    }
     saldo -= amount;
+    return true;
+}
+
+bool Luottotili::deposit(double amount) {
+    if (amount < 0) return false;
+    if ((saldo + amount) > 0) {
+        return false;
+    }
+    saldo += amount;
     return true;
 }

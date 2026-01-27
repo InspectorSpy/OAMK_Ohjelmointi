@@ -30,10 +30,13 @@ Pankkitili::Pankkitili(string nimi) : owner(nimi), saldo(0) {
 
 }
 
+Pankkitili::~Pankkitili() {
+
+}
+
 bool Pankkitili::deposit(double amount) {
     if(amount < 0) return false;
-    if (saldo - amount < 0) return false;
-    saldo -= amount;
+    saldo += amount;
     return true;
 }
 
@@ -46,8 +49,4 @@ bool Pankkitili::withdraw(double amount) {
 
 double Pankkitili::getBalance() {
     return saldo;
-}
-
-Pankkitili::~Pankkitili() {
-
 }

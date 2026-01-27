@@ -31,34 +31,30 @@ Tehtävän toisessa osassa harjoitellaan viittauksien käyttöä.
 #include "asiakas.h"
 
 int main() {
+    // Matti Meikäläinen
     Asiakas asiakas1("Matti Meikäläinen", 1000);
-    Asiakas asiakas2("Teppo Testi", 500);
-
-    cout << "--- Initial State ---" << endl;
     asiakas1.showSaldo();
-    asiakas2.showSaldo();
+    cout << endl;
 
-    cout << "--- Actions for Matti ---" << endl;
+    // Matti tekee
     asiakas1.talletus(500);
     asiakas1.luotonNosto(200);
     asiakas1.showSaldo();
+    cout << endl;
 
-    cout << "\n--- Transfer 100 from Matti to Teppo ---" << endl;
-    if (asiakas1.tiliSiirto(100, asiakas2)) {
-        cout << "Transfer successful." << endl;
-    } else {
-        cout << "Transfer failed." << endl;
-    }
-
-    asiakas1.showSaldo();
+    // Teppo Testi
+    Asiakas asiakas2("Teppo Testi", 500);
     asiakas2.showSaldo();
+    cout << endl;
 
-    cout << "\n--- Attempt Transfer 1000 from Matti (should fail) ---" << endl;
-    if (asiakas1.tiliSiirto(1000, asiakas2)) {
-        cout << "Transfer successful." << endl;
-    } else {
-        cout << "Transfer failed (insufficient funds)." << endl;
-    }
+    // Matti status
+    cout << asiakas1.getName() << endl;
+    asiakas1.showSaldo();
 
+    asiakas1.tiliSiirto(200, asiakas2);
+
+    cout << asiakas2.getName() << endl;
+    asiakas2.showSaldo();
+    
     return 0;
 }
