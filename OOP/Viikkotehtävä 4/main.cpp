@@ -1,49 +1,27 @@
 /*
 Tehtävä osa 1.
-1. Toteutusta on helpoin lähteä tekemään Pankkitili-luokasta. Jäsenfunktioissa deposit() tekee talletuksen tilille ja withdraw() noston tililtä. 
-Hox! Nämä funktiot ovat virtuaalisia!
-2. Negatiivisia nostoja / talletuksia ei voi tehdä. Esim
-noston parametriksi ei voi antaa summaa -123.45.
-3. Pankkitilin saldo ei saa mennä negatiiviseksi, eli
-enempää ei voi nostaa kun mitä saldo on.
-4. Nämä jäsenfunktiot palauttavat true/false sen
-mukaan onnistuiko talletus/nosto.
+1. Toteutusta on helpoin lähteä tekemään Pankkitili-luokasta. Jäsenfunktioissa deposit() tekee talletuksen tilille ja withdraw() noston tililtä. Hox! Nämä funktiot ovat virtuaalisia!
+2. Negatiivisia nostoja / talletuksia ei voi tehdä. Esim noston parametriksi ei voi antaa summaa -123.45.
+3. Pankkitilin saldo ei saa mennä negatiiviseksi, eli enempää ei voi nostaa kun mitä saldo on.
+4. Nämä jäsenfunktiot palauttavat true/false sen mukaan onnistuiko talletus/nosto.
 5. Luokassa on myös getteri saldolle (getBalance()).
-6. Huomataan, että Luottotili-luokka perii Pankkitilin. Tarvitsee siis tehdä 
-omat toteutukset luottotililtä nostolle/luottovelan maksulle, perittyihin virtuaalifunktioihin. 
-Hox! Muistakaa avainsana override.
-7. Konstruktorissa on nyt parametrit tilinomistajan nimi
-ja henkilökohtainen luottoraja.
-8. Negatiivisia nostoja / velanmaksuja ei voi tehdä. Esim
-velanmaksun parametriksi ei voi antaa summaa -123.
-9. Luottotilin saldo saa mennä negatiiviseksi, mutta ei
-alle luottorajan. 
-10. Funktiot palauttavat jälleen true/false sen mukaan 
-onnistuiko operaatio. 
-11. Luottotilin saldo ei saa olla yli 0. Eli kaikki nostettu
-on velkaa.
+6. Huomataan, että Luottotili-luokka perii Pankkitilin. Tarvitsee siis tehdä omat toteutukset luottotililtä nostolle/luottovelan maksulle, perittyihin virtuaalifunktioihin. Hox! Muistakaa avainsana override.
+7. Konstruktorissa on nyt parametrit tilinomistajan nimi ja henkilökohtainen luottoraja.
+8. Negatiivisia nostoja / velanmaksuja ei voi tehdä. Esim velanmaksun parametriksi ei voi antaa summaa -123.
+9. Luottotilin saldo saa mennä negatiiviseksi, mutta ei alle luottorajan. 
+10. Funktiot palauttavat jälleen true/false sen mukaan onnistuiko operaatio. 
+11. Luottotilin saldo ei saa olla yli 0. Eli kaikki nostettu on velkaa.
 12. Seuraavaksi laaditaan Asiakas-luokka. Huomataan yksityiset jäsenet luokista Pankkitili ja Luottotili. Konstruktorissa double-parametri on asiakkaan henkilökohtainen luottoraja.
 13. Jäsenfunktio showSaldo() tulostaa molempin tilien saldot ruudulle.
-14. Jäsenfunktiot talletus() ja nosto() tekevät nämä
-operaatiot pankkitilille (ts. kutsutaan 
-jäsenolion vastaavaa funktiota).
-15. Jäsenfunktiot luotonMaksu() ja luotonNosto()
-tekevät operaatiot luottotilille (ts. kutsutaan 
-jäsenolion vastaavaa funktiota).
+14. Jäsenfunktiot talletus() ja nosto() tekevät nämä operaatiot pankkitilille (ts. kutsutaan jäsenolion vastaavaa funktiota).
+15. Jäsenfunktiot luotonMaksu() ja luotonNosto() tekevät operaatiot luottotilille (ts. kutsutaan jäsenolion vastaavaa funktiota).
 
 Tehtävä osa 2.
 Tehtävän toisessa osassa harjoitellaan viittauksien käyttöä. 
-1. Huomataan alla luokkakaaviosta uusi jäsenfunktio tiliSiirto, jossa on 
-parametrinä ensin siirrettävä summa ja sitten viittaus Asiakas-luokan 
-olioon, kenelle summa siirretään.
-2. Siirron voi tehdä pankkitililtä toiselle, ei luottotililtä
-luottotilille. 
-3. Nyt operaatiossa täytyy ensin nostaa rahat tililtä 
-ja sen jälkeen tallettaa nostetut rahat parametrinä
-annetun asiakkaan tilille. 
-4. Tietysti tässä pätee samat säännöt kuin aiemmin:
-tilillä pitää olla tarpeeksi rahaa, negat siirtoa ei
-voi tehdä, jne. 
+1. Huomataan alla luokkakaaviosta uusi jäsenfunktio tiliSiirto, jossa on parametrinä ensin siirrettävä summa ja sitten viittaus Asiakas-luokan olioon, kenelle summa siirretään.
+2. Siirron voi tehdä pankkitililtä toiselle, ei luottotililtä luottotilille. 
+3. Nyt operaatiossa täytyy ensin nostaa rahat tililtä ja sen jälkeen tallettaa nostetut rahat parametrinä annetun asiakkaan tilille. 
+4. Tietysti tässä pätee samat säännöt kuin aiemmin: tilillä pitää olla tarpeeksi rahaa, negatiivista siirtoa ei voi tehdä, jne. 
 */
 
 #include <iostream>
@@ -53,18 +31,34 @@ voi tehdä, jne.
 #include "asiakas.h"
 
 int main() {
-    Asiakas asiakas1("Matti Meikäläinen", 500.0);
-    Asiakas asiakas2("Maija Mallikas", 300.0);
+    Asiakas asiakas1("Matti Meikäläinen", 1000);
+    Asiakas asiakas2("Teppo Testi", 500);
 
-    asiakas1.talletus(1000.0);
-    asiakas1.nosto(200.0);
-    asiakas1.luotonNosto(400.0);
+    cout << "--- Initial State ---" << endl;
     asiakas1.showSaldo();
-    asiakas1.tiliSiirto(100.0, asiakas2);
+    asiakas2.showSaldo();
+
+    cout << "--- Actions for Matti ---" << endl;
+    asiakas1.talletus(500);
+    asiakas1.luotonNosto(200);
     asiakas1.showSaldo();
 
+    cout << "\n--- Transfer 100 from Matti to Teppo ---" << endl;
+    if (asiakas1.tiliSiirto(100, asiakas2)) {
+        cout << "Transfer successful." << endl;
+    } else {
+        cout << "Transfer failed." << endl;
+    }
+
+    asiakas1.showSaldo();
     asiakas2.showSaldo();
-    asiakas2.luotonMaksu(150.0);
-    asiakas2.showSaldo();
+
+    cout << "\n--- Attempt Transfer 1000 from Matti (should fail) ---" << endl;
+    if (asiakas1.tiliSiirto(1000, asiakas2)) {
+        cout << "Transfer successful." << endl;
+    } else {
+        cout << "Transfer failed (insufficient funds)." << endl;
+    }
+
     return 0;
 }
