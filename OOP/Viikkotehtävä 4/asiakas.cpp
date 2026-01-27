@@ -45,3 +45,13 @@ annetun asiakkaan tilille.
 tilillä pitää olla tarpeeksi rahaa, negat siirtoa ei
 voi tehdä, jne. 
 */
+
+#include <iostream>
+#include <string>
+#include "pankkitili.h"
+#include "luottotili.h"
+#include "asiakas.h"
+
+int main() {
+    Asiakas
+}

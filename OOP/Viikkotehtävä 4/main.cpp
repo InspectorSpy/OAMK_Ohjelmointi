@@ -52,3 +52,19 @@ voi tehdä, jne.
 #include "luottotili.h"
 #include "asiakas.h"
 
+int main() {
+    Asiakas asiakas1("Matti Meikäläinen", 500.0);
+    Asiakas asiakas2("Maija Mallikas", 300.0);
+
+    asiakas1.talletus(1000.0);
+    asiakas1.nosto(200.0);
+    asiakas1.luotonNosto(400.0);
+    asiakas1.showSaldo();
+    asiakas1.tiliSiirto(100.0, asiakas2);
+    asiakas1.showSaldo();
+
+    asiakas2.showSaldo();
+    asiakas2.luotonMaksu(150.0);
+    asiakas2.showSaldo();
+    return 0;
+}
