@@ -48,6 +48,7 @@ class Asiakas {
         bool luotonMaksu(double amount);
         bool luotonNosto(double amount);
         bool tiliSiirto(double summa, Asiakas &saaja);
+        string getName();
 };
 
 #endif

@@ -67,3 +67,7 @@ bool Asiakas::tiliSiirto(double summa, Asiakas &saaja) {
     }
     return false;
 }
+
+string Asiakas::getName() {
+    return nimi;
+}
