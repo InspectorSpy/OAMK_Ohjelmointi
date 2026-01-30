@@ -40,9 +40,12 @@ class Asiakas {
         Luottotili luottotili;
 
     public:
-        Asiakas(string nimi, double luottoraja);
+        double luottoRaja;
+
+        Asiakas(string nimi, double lr);
 
         void showSaldo();
+        void showSaldoSimple();
         bool talletus(double amount);
         bool nosto(double amount);
         bool luotonMaksu(double amount);

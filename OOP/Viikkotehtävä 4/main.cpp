@@ -30,30 +30,39 @@ Tehtävän toisessa osassa harjoitellaan viittauksien käyttöä.
 #include "luottotili.h"
 #include "asiakas.h"
 
+using namespace std;
+
 int main() {
+    system("chcp 65001 > nul");
+
     // Matti Meikäläinen
+    cout << "Tilit luotu Matille, asetettu luottoraja 1000€" << endl;
     Asiakas asiakas1("Matti Meikäläinen", 1000);
     asiakas1.showSaldo();
     cout << endl;
 
     // Matti tekee
-    asiakas1.talletus(500);
-    asiakas1.luotonNosto(200);
+    cout << "Pankkitili: 250€ talletus tehty" << endl;
+    asiakas1.talletus(250);
+    cout << "Luottotili: 150€ nosto tehty, luottoa jäljellä 850€" << endl;
+    asiakas1.luotonNosto(150);
     asiakas1.showSaldo();
     cout << endl;
 
     // Teppo Testi
-    Asiakas asiakas2("Teppo Testi", 500);
+    cout << "Tilit luotu Tepolle, asetettu luottoraja 1000€" << endl;
+    Asiakas asiakas2("Teppo Testi", 1000);
     asiakas2.showSaldo();
     cout << endl;
 
     // Matti status
-    cout << asiakas1.getName() << endl;
     asiakas1.showSaldo();
 
+    // Matti siirtää Tepolle 200€
+    cout << "Pankkitili: Matti siirtää 200€ Tepolle" << endl;
     asiakas1.tiliSiirto(200, asiakas2);
-
-    cout << asiakas2.getName() << endl;
+    cout << "Matin pankkitili: nosto 200€ onnistui" << endl;
+    cout << "Tepon pankkitili: talletus 200€ onnistui" << endl;
     asiakas2.showSaldo();
     
     return 0;

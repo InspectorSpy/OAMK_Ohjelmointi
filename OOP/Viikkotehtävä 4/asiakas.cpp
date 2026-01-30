@@ -30,13 +30,15 @@ Tehtävän toisessa osassa harjoitellaan viittauksien käyttöä.
 using namespace std;
 
 Asiakas::Asiakas(string n, double lr) : nimi(n), kayttotili(n), luottotili(n, lr) {
-
+    luottoRaja = lr;
 }
 
 void Asiakas::showSaldo() {
-    cout << "Asiakas: " << nimi << endl;
+    cout << "Asiakuus luotu: " << nimi << endl;
     cout << "Käyttötili saldo: " << kayttotili.getBalance() << endl;
-    cout << "Luottotili saldo: " << luottotili.getBalance() << endl;
+    double luottoaJäljellä = luottoRaja + luottotili.getBalance();
+    cout << "Luottotili saldo: " << luottoaJäljellä << endl;
+
 }
 
 bool Asiakas::talletus(double amount) {

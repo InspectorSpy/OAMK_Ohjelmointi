@@ -36,8 +36,8 @@ class Luottotili : public Pankkitili {
     public:
         Luottotili(string nimi, double raja);
         virtual ~Luottotili();
-        virtual bool deposit(double amount) override;
-        virtual bool withdraw(double amount) override;
+        bool deposit(double amount) override;
+        bool withdraw(double amount) override;
 };
 
 #endif
