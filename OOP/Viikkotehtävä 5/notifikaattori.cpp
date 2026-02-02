@@ -15,40 +15,45 @@
 #include <iostream>
 #include <string>
 #include "notifikaattori.h"
-#include "seuraaja.h"
 
-using namespace std;
+notifikaattori::notifikaattori(const std::string& n) : nimi(n), seuraajat(nullptr) {}
 
-int main() {
-    system("chcp 65001 > nul");
+void notifikaattori::lisaa(seuraaja* s) {
+    s->next = seuraajat;
+    seuraajat = s;
+}
 
-    notifikaattori n("Uutiset");
-    seuraaja s1("Matti Meikäläinen");
-    seuraaja s2("Teppo Testi");
-    seuraaja s3("Maija Mehiläinen");
+void notifikaattori::poista(seuraaja* s) {
+    if (seuraajat == nullptr) return;
 
-    n.lisaa(&s1);
-    n.lisaa(&s2);
-    n.lisaa(&s3);
+    if (seuraajat == s) {
+        seuraajat = seuraajat->next;
+        return;
+    }
 
-    cout << "Seuraajat lisätty. Seuraajat ovat:" << endl;
-    n.tulosta();
-    cout << endl;
+    seuraaja* current = seuraajat;
+    while (current->next != nullptr) {
+        if (current->next == s) {
+            current->next = current->next->next;
+            return;
+        }
+    }
 
-    cout << "Postitetaan viesti: 'Tänään on aurinkoista!'" << endl;
-    n.postita("Tänään on aurinkoista!");
-    cout << endl;
+    current = current->next;
+}
 
-    cout << "Poistetaan seuraaja Teppo Testi." << endl;
-    n.poista(&s2);
+void notifikaattori::tulosta() const {
+    seuraaja* current = seuraajat;
+    while (current != nullptr) {
+        std::cout << current->getNimi() << std::endl;
+        current = current->next;
+    }
+}
 
-    cout << "Jäljellä olevat seuraajat ovat:" << endl;
-    n.tulosta();
-    cout << endl;
-
-    cout << "Postitetaan viesti: 'Sataa vettä!'" << endl;
-    n.postita("Sataa vettä!");
-    cout << endl;
-
-    return 0;
+void notifikaattori::postita(const std::string& viesti) const {
+    seuraaja* current = seuraajat;
+    while (current != nullptr) {
+        current->paivitys(viesti);
+        current = current->next;
+    }
 }

@@ -14,41 +14,14 @@
 
 #include <iostream>
 #include <string>
-#include "notifikaattori.h"
 #include "seuraaja.h"
 
-using namespace std;
+seuraaja::seuraaja(const std::string& n) : nimi(n), next(nullptr) {}
 
-int main() {
-    system("chcp 65001 > nul");
+std::string seuraaja::getNimi() const {
+    return nimi;
+}
 
-    notifikaattori n("Uutiset");
-    seuraaja s1("Matti Meikäläinen");
-    seuraaja s2("Teppo Testi");
-    seuraaja s3("Maija Mehiläinen");
-
-    n.lisaa(&s1);
-    n.lisaa(&s2);
-    n.lisaa(&s3);
-
-    cout << "Seuraajat lisätty. Seuraajat ovat:" << endl;
-    n.tulosta();
-    cout << endl;
-
-    cout << "Postitetaan viesti: 'Tänään on aurinkoista!'" << endl;
-    n.postita("Tänään on aurinkoista!");
-    cout << endl;
-
-    cout << "Poistetaan seuraaja Teppo Testi." << endl;
-    n.poista(&s2);
-
-    cout << "Jäljellä olevat seuraajat ovat:" << endl;
-    n.tulosta();
-    cout << endl;
-
-    cout << "Postitetaan viesti: 'Sataa vettä!'" << endl;
-    n.postita("Sataa vettä!");
-    cout << endl;
-
-    return 0;
+void seuraaja::paivitys(const std::string& viesti) {
+    std::cout << nimi << " sai viestin: " << viesti << std::endl;
 }

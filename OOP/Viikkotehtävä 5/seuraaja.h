@@ -14,41 +14,22 @@
 
 #include <iostream>
 #include <string>
-#include "notifikaattori.h"
-#include "seuraaja.h"
 
-using namespace std;
+#ifndef NOTIFIKAATTORI_H
+#define NOTIFIKAATTORI_H
 
-int main() {
-    system("chcp 65001 > nul");
+class seuraaja;
+class notifikaattori {
+    private:
+        std::string nimi;
+        seuraaja* seuraajat;
 
-    notifikaattori n("Uutiset");
-    seuraaja s1("Matti Meikäläinen");
-    seuraaja s2("Teppo Testi");
-    seuraaja s3("Maija Mehiläinen");
+    public:
+        notifikaattori(const std::string& n);
+        void lisaa(seuraaja* s);
+        void poista(seuraaja* s);
+        void tulosta() const;
+        void postita(const std::string& viesti) const;
+};
 
-    n.lisaa(&s1);
-    n.lisaa(&s2);
-    n.lisaa(&s3);
-
-    cout << "Seuraajat lisätty. Seuraajat ovat:" << endl;
-    n.tulosta();
-    cout << endl;
-
-    cout << "Postitetaan viesti: 'Tänään on aurinkoista!'" << endl;
-    n.postita("Tänään on aurinkoista!");
-    cout << endl;
-
-    cout << "Poistetaan seuraaja Teppo Testi." << endl;
-    n.poista(&s2);
-
-    cout << "Jäljellä olevat seuraajat ovat:" << endl;
-    n.tulosta();
-    cout << endl;
-
-    cout << "Postitetaan viesti: 'Sataa vettä!'" << endl;
-    n.postita("Sataa vettä!");
-    cout << endl;
-
-    return 0;
-}
+#endif 
