@@ -16,12 +16,12 @@
 #include <string>
 #include "seuraaja.h"
 
-seuraaja::seuraaja(const std::string& n) : nimi(n), next(nullptr) {}
+seuraaja::seuraaja(const std::string& n) : nimi(n), next(nullptr) {} // Konstruktori
 
-std::string seuraaja::getNimi() const {
+std::string seuraaja::getNimi() const { // Palauta nimi
     return nimi;
 }
 
-void seuraaja::paivitys(const std::string& viesti) {
-    std::cout << nimi << " sai viestin: " << viesti << std::endl;
+void seuraaja::paivitys(const std::string& viesti) { // Päivitys
+    std::cout << nimi << " sai viestin: " << viesti << std::endl; // Tulosta viesti
 }

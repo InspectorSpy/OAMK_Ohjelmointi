@@ -20,34 +20,34 @@
 using namespace std;
 
 int main() {
-    system("chcp 65001 > nul");
+    system("chcp 65001 > nul"); // UTF-8 koodaus Windowsille
 
-    notifikaattori n("Uutiset");
-    seuraaja s1("Matti Meikäläinen");
+    notifikaattori n("Uutiset"); // Luo notif
+    seuraaja s1("Matti Meikäläinen"); // Luo seuraajat
     seuraaja s2("Teppo Testi");
     seuraaja s3("Maija Mehiläinen");
 
-    n.lisaa(&s1);
+    n.lisaa(&s1); // Lisää seuraajat
     n.lisaa(&s2);
     n.lisaa(&s3);
 
     cout << "Seuraajat lisätty. Seuraajat ovat:" << endl;
-    n.tulosta();
+    n.tulosta(); // Tulosta seuraajat
     cout << endl;
 
     cout << "Postitetaan viesti: 'Tänään on aurinkoista!'" << endl;
-    n.postita("Tänään on aurinkoista!");
+    n.postita("Tänään on aurinkoista!"); // Postita viesti
     cout << endl;
 
     cout << "Poistetaan seuraaja Teppo Testi." << endl;
-    n.poista(&s2);
+    n.poista(&s2); // Poista seuraaja
 
     cout << "Jäljellä olevat seuraajat ovat:" << endl;
-    n.tulosta();
+    n.tulosta(); // Tulosta seuraajat
     cout << endl;
 
     cout << "Postitetaan viesti: 'Sataa vettä!'" << endl;
-    n.postita("Sataa vettä!");
+    n.postita("Sataa vettä!"); // Postita viesti
     cout << endl;
 
     return 0;

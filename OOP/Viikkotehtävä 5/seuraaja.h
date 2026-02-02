@@ -20,12 +20,12 @@
 
 class seuraaja {
     private:
-        std::string nimi;
+        std::string nimi; // Nimi
     public:
-        seuraaja* next;
-        seuraaja(const std::string& n);
-        std::string getNimi() const;
-        void paivitys(const std::string& viesti);
+        seuraaja* next; // Osoitin
+        seuraaja(const std::string& n); // Konstruktori
+        std::string getNimi() const; // Palauta nimi
+        void paivitys(const std::string& viesti); // Päivitys
 };
 
 #endif 

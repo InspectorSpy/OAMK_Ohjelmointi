@@ -21,15 +21,15 @@
 class seuraaja; // Eteenpäin ilmoitus
 class notifikaattori {
     private:
-        std::string nimi;
-        seuraaja* seuraajat;
+        std::string nimi; // Nimi
+        seuraaja* seuraajat; // Osoitin
     
     public:
-        notifikaattori(const std::string& n);
-        void lisaa(seuraaja* s);
-        void poista(seuraaja* s);
-        void tulosta() const;
-        void postita(const std::string& viesti) const;
+        notifikaattori(const std::string& n); // Konstruktori
+        void lisaa(seuraaja* s); // Lisää
+        void poista(seuraaja* s); // Poista
+        void tulosta() const; // Tulosta
+        void postita(const std::string& viesti) const; // Postita
 };
 
 #endif // NOTIFIKAATTORI_H

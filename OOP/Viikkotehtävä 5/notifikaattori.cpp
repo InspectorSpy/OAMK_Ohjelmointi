@@ -17,44 +17,43 @@
 #include "notifikaattori.h"
 #include "seuraaja.h"
 
-notifikaattori::notifikaattori(const std::string& n) : nimi(n), seuraajat(nullptr) {}
+notifikaattori::notifikaattori(const std::string& n) : nimi(n), seuraajat(nullptr) {} // Konstruktori
 
-void notifikaattori::lisaa(seuraaja* s) {
-    s->next = seuraajat;
-    seuraajat = s;
+void notifikaattori::lisaa(seuraaja* s) { // Lisää seuraaja
+    s->next = seuraajat; // Kiilaa alkuun
+    seuraajat = s; // Päivitä
 }
 
 void notifikaattori::poista(seuraaja* s) {
-    if (seuraajat == nullptr) return;
+    if (seuraajat == nullptr) return; // Tyhjä lista
 
-    if (seuraajat == s) {
-        seuraajat = seuraajat->next;
+    if (seuraajat == s) { // Poista ensimmäinen
+        seuraajat = seuraajat->next; 
         return;
     }
 
-    seuraaja* current = seuraajat;
-    while (current->next != nullptr) {
-        if (current->next == s) {
-            current->next = current->next->next;
+    seuraaja* current = seuraajat; // Etsi poistettava
+    while (current->next != nullptr) { // Käy lista läpi
+        if (current->next == s) { 
+            current->next = current->next->next; // Ohita
             return;
         }
-    }
-
-    current = current->next;
-}
-
-void notifikaattori::tulosta() const {
-    seuraaja* current = seuraajat;
-    while (current != nullptr) {
-        std::cout << current->getNimi() << std::endl;
-        current = current->next;
+        current = current->next; // Siirry seuraavaan
     }
 }
 
-void notifikaattori::postita(const std::string& viesti) const {
-    seuraaja* current = seuraajat;
-    while (current != nullptr) {
-        current->paivitys(viesti);
-        current = current->next;
+void notifikaattori::tulosta() const { // Tulosta seuraajat
+    seuraaja* current = seuraajat; // Aloita
+    while (current != nullptr) { // Käy lista läpi
+        std::cout << current->getNimi() << std::endl; // Tulosta nimi
+        current = current->next; // Siirry seuraavaan
+    }
+}
+
+void notifikaattori::postita(const std::string& viesti) const { // Postita viesti
+    seuraaja* current = seuraajat; // Aloita
+    while (current != nullptr) { // Käy lista läpi
+        current->paivitys(viesti); // Kutsu päivitystä
+        current = current->next; // Siirry seuraavaan
     }
 }
