@@ -15,21 +15,17 @@
 #include <iostream>
 #include <string>
 
-#ifndef NOTIFIKAATTORI_H
-#define NOTIFIKAATTORI_H
+#ifndef SEURAAJA_H
+#define SEURAAJA_H
 
-class seuraaja;
-class notifikaattori {
+class seuraaja {
     private:
         std::string nimi;
-        seuraaja* seuraajat;
-
     public:
-        notifikaattori(const std::string& n);
-        void lisaa(seuraaja* s);
-        void poista(seuraaja* s);
-        void tulosta() const;
-        void postita(const std::string& viesti) const;
+        seuraaja* next;
+        seuraaja(const std::string& n);
+        std::string getNimi() const;
+        void paivitys(const std::string& viesti);
 };
 
 #endif 

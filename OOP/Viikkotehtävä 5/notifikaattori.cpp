@@ -15,6 +15,7 @@
 #include <iostream>
 #include <string>
 #include "notifikaattori.h"
+#include "seuraaja.h"
 
 notifikaattori::notifikaattori(const std::string& n) : nimi(n), seuraajat(nullptr) {}
 
