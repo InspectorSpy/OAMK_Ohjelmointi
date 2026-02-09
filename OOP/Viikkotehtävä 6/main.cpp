@@ -8,10 +8,12 @@
 #include <algorithm>
 #include "student.h"
 
+using namespace std;
+
 int main ()
 {
-  int selection =0;
-  vector<Student>studentList;
+  int selection = 0;
+  vector<Student> studentList;
 
   do
     {
@@ -27,39 +29,78 @@ int main ()
       switch(selection)
       {
         case 0:
+        {
           // Kysy käyttäjältä uuden opiskelijan nimi ja ikä
 		  // Lisää uusi student StudentList vektoriin.
+            string name;
+            int age;
+            cout << "Enter student name: ";
+            cin >> name;
+            cout << "Enter student age: ";
+            cin >> age;
+            studentList.emplace_back(name, age);
           break;
+        }
         case 1:
+        {
           // Tulosta StudentList vektorin kaikkien opiskelijoiden
-		  // nimet. 
+		  // nimet.
+            for (const auto& student : studentList) {
+                student.printStudentInfo();
+            }
           break;
-
+        }
         case 2:
+        {
 		  // Järjestä StudentList vektorin Student oliot nimen mukaan
 		  // algoritmikirjaston sort funktion avulla
 		  // ja tulosta printStudentInfo() funktion avulla järjestetyt
 		  // opiskelijat
+            sort(studentList.begin(), studentList.end(), [](const Student& a, const Student& b) {
+                return a.getName() < b.getName();
+            });
+            for (const auto& student : studentList) {
+                student.printStudentInfo();
+            }
           break;
-
+        }
         case 3:
+        {
 		  // Järjestä StudentList vektorin Student oliot iän mukaan
 		  // algoritmikirjaston sort funktion avulla
 		  // ja tulosta printStudentInfo() funktion avulla järjestetyt
 		  // opiskelijat
+            sort(studentList.begin(), studentList.end(), [](const Student& a, const Student& b) {
+                return a.getAge() < b.getAge();
+            });
+            for (const auto& student : studentList) {
+                student.printStudentInfo();
+            }
           break;
+        }
         case 4:
+        {
           // Kysy käyttäjältä opiskelijan nimi
 		  // Etsi studentListan opiskelijoista algoritmikirjaston
 		  // find_if funktion avulla löytyykö käyttäjän antamaa nimeä
 		  // listalta. Jos löytyy, niin tulosta opiskelijan tiedot.
-          break;
-          }
+            string searchName;
+            cout << "Enter student name to find: ";
+            cin >> searchName;
+            auto it = find_if(studentList.begin(), studentList.end(), [&searchName](const Student& student) {
+                return student.getName() == searchName;
+            });
+            if (it != studentList.end()) {
+                it->printStudentInfo();
+            } else {
+                cout << "Student not found." << endl;
+            }
+            break;
+        }
         default:
           cout<< "Wrong selection, stopping..."<<endl;
           break;
       }
-    }while(selection < 5);
-
+    } while(selection < 5);
   return 0;
 }
