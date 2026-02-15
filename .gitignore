@@ -28,3 +28,37 @@ OOP/Viikkotehtävä 3/game
 OOP/Viikkotehtävä 4/banksim.exe
 OOP/Viikkotehtävä 5/some.exe
 OOP/testing.cpp
+build/cmake_install.cmake
+build/CMakeCache.txt
+build/compile_commands.json
+build/Makefile
+build/.cmake/api/v1/query/client-vscode/query.json
+build/.cmake/api/v1/reply/cache-v2-f51ce9d9a3706b156dd2.json
+build/.cmake/api/v1/reply/cmakeFiles-v1-4bec1eb56098974a2a03.json
+build/.cmake/api/v1/reply/codemodel-v2-ca707781166fd23f0a20.json
+build/.cmake/api/v1/reply/directory-.-Debug-ae34be9f15a5d7cf6b03.json
+build/.cmake/api/v1/reply/index-2026-02-15T16-59-55-0659.json
+build/.cmake/api/v1/reply/target-C_Ohjelmointi_MAIN-Debug-606e88c75663c7046e64.json
+build/.cmake/api/v1/reply/toolchains-v1-10224e16400b5eefdb2f.json
+build/CMakeFiles/cmake.check_cache
+build/CMakeFiles/CMakeConfigureLog.yaml
+build/CMakeFiles/CMakeDirectoryInformation.cmake
+build/CMakeFiles/Makefile.cmake
+build/CMakeFiles/Makefile2
+build/CMakeFiles/progress.marks
+build/CMakeFiles/TargetDirectories.txt
+build/CMakeFiles/3.31.10/CMakeCCompiler.cmake
+build/CMakeFiles/3.31.10/CMakeDetermineCompilerABI_C.bin
+build/CMakeFiles/3.31.10/CMakeSystem.cmake
+build/CMakeFiles/3.31.10/CompilerIdC/a.out
+build/CMakeFiles/3.31.10/CompilerIdC/CMakeCCompilerId.c
+build/CMakeFiles/C_Ohjelmointi_MAIN.dir/build.make
+build/CMakeFiles/C_Ohjelmointi_MAIN.dir/cmake_clean.cmake
+build/CMakeFiles/C_Ohjelmointi_MAIN.dir/compiler_depend.make
+build/CMakeFiles/C_Ohjelmointi_MAIN.dir/compiler_depend.ts
+build/CMakeFiles/C_Ohjelmointi_MAIN.dir/depend.make
+build/CMakeFiles/C_Ohjelmointi_MAIN.dir/DependInfo.cmake
+build/CMakeFiles/C_Ohjelmointi_MAIN.dir/flags.make
+build/CMakeFiles/C_Ohjelmointi_MAIN.dir/link.txt
+build/CMakeFiles/C_Ohjelmointi_MAIN.dir/progress.make
+OOP/Viikkotehtävä 6/student
