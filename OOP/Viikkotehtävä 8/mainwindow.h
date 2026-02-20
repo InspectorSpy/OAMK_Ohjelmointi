@@ -8,7 +8,7 @@
     4. Jos jommankumman pelaajan player1Time tai player2Time muuttuja = 0, niin päädytään tähän neljänteen vaiheeseen.
     5. Pelin voi päättää missä vaiheessa tahansa, jolloin pelaajaa kehotetaan aloittamaan uusi peli valitsemalla peliaika ja käynnistämällä peli START GAME painikkeella.
 
-    HUOM: Luokkakaaviosta puuttuvat signaalit ja slotit. Mutta tietysti jokaiselle QPushButton oliolle täytyy oma click handlerinsä olla ja Qtimer luokan timeout() signaalia voidaan hyödyntää ajan kulumisen mittaamiseen. MainWindow luokassa oleva julkinen (public) timeout() funktio on public slots tyyppinen, eli siihen voidaan kytkeä Qtimer luokan timeout() signaali.
+HUOM: Luokkakaaviosta puuttuvat signaalit ja slotit. Mutta tietysti jokaiselle QPushButton oliolle täytyy oma click handlerinsä olla ja Qtimer luokan timeout() signaalia voidaan hyödyntää ajan kulumisen mittaamiseen. MainWindow luokassa oleva julkinen (public) timeout() funktio on public slots tyyppinen, eli siihen voidaan kytkeä Qtimer luokan timeout() signaali.
 
 UpdateProgressBar() metodi päivittää kummankin progressbar olion tilanteen player1Time, player2Time ja gameTime muuttujien perusteella.
 
