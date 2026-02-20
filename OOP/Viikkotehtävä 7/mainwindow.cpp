@@ -80,5 +80,14 @@ void MainWindow::on_clear_clicked() {
 void MainWindow::on_enter_clicked() {
     float num1 = number1.toFloat();
     float num2 = number2.toFloat();
-    float
+    float result = 0;
+
+    switch(operand) {
+        case 0: result = num1 + num2; break;
+        case 1: result = num1 - num2; break;
+        case 2: result = num1 * num2; break;
+        case 3: result = num1 != 0 ? num1 / num2 : 0; break;
+    }
+
+    ui->result->setText(QString::number(result));
 }
