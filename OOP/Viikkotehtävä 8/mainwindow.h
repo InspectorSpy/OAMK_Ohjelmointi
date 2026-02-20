@@ -54,5 +54,10 @@ class MainWindow : public QMainWindow
         int currentPlayer;
         bool gameRunning;
 
-        
+        void updateProgressBar();
+        void setGameInfoText(QString text, short fontSize);
+        void startGame();
+        void endGame(int winner);
 };
+
+#endif
