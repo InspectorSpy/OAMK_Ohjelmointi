@@ -62,11 +62,11 @@ void MainWindow::on_N9_clicked() { numberClickHandler(); }
 
 void MainWindow::on_add_clicked() { operand = 0; state = 2; }
 
-void MainWindow::on_sub_clicked() { operand = 0; state = 2; }
+void MainWindow::on_sub_clicked() { operand = 1; state = 2; }
 
-void MainWindow::on_mul_clicked() { operand = 0; state = 2; }
+void MainWindow::on_mul_clicked() { operand = 2; state = 2; }
 
-void MainWindow::on_div_clicked() { operand = 0; state = 2; }
+void MainWindow::on_div_clicked() { operand = 3; state = 2; }
 
 void MainWindow::on_clear_clicked() {
     state = 1;
