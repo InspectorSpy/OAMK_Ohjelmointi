@@ -2,12 +2,12 @@ QT += core gui widgets
 
 greaterThan (QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Calculator
+TARGET = calculator
 TEMPLATE = app
 
 SOURCES += \
     main.cpp \
-    calculator.cpp
+    mainwindow.cpp
 
 HEADERS += \
     mainwindow.h

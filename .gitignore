@@ -76,3 +76,11 @@ build/.cmake/api/v1/reply/index-2026-02-20T10-39-00-0010.json
 build/C_Ohjelmointi_MAIN
 OOP/Viikkotehtävä 7/.qmake.stash
 OOP/Viikkotehtävä 7/Makefile
+OOP/Viikkotehtävä 7/calculator
+.gitignore
+OOP/Viikkotehtävä 7/mainwindow.o
+OOP/Viikkotehtävä 7/main.o
+OOP/Viikkotehtävä 7/moc_predefs.h
+OOP/Viikkotehtävä 7/moc_mainwindow.o
+OOP/Viikkotehtävä 7/moc_mainwindow.cpp
+OOP/Viikkotehtävä 7/ui_mainwindow.h
