@@ -15,15 +15,44 @@ UpdateProgressBar() metodi päivittää kummankin progressbar olion tilanteen pl
 setGameInfoText(Qstring,short) metodin Qstring parametrin avulla voidaan tulostaa ohjetekstejä käyttöliittymän Label olioon ja metodin short parametrilla voidaan valita tuon ohjetekstin fontin koko.
 */
 
-#include "mainwindow.h"
-#include <QApplication>
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
-using namespace std;
+#include <QMainWindow>
+#include <QTimer>
+#include <QProgressBar>
+#include <QDebug>
 
-int main(int argc, char *argv[])
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
+
+class MainWindow : public QMainWindow
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-    return a.exec();
-}
+    Q_OBJECT
+
+    public:
+        MainWindow(QWidget *parent = nullptr);
+        ~MainWindow();
+
+    private slots:
+        void on_time5Button_Clicked();
+        void on_time10Button_clicked();
+        void on_startGameButton_clicked();
+        void on_switchPlayer1Button_clicked();
+        void on_switchPlayer2Button_clicked();
+        void on_resetGameButton_clicked();
+        void updateTime();
+
+    private:
+        Ui::MainWindow *ui;
+
+        QTimer *gameTimer;
+        int gameTime;
+        int player1Time;
+        int player2Time;
+        int currentPlayer;
+        bool gameRunning;
+
+        
+};

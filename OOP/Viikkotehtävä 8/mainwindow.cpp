@@ -14,16 +14,3 @@ UpdateProgressBar() metodi päivittää kummankin progressbar olion tilanteen pl
 
 setGameInfoText(Qstring,short) metodin Qstring parametrin avulla voidaan tulostaa ohjetekstejä käyttöliittymän Label olioon ja metodin short parametrilla voidaan valita tuon ohjetekstin fontin koko.
 */
-
-#include "mainwindow.h"
-#include <QApplication>
-
-using namespace std;
-
-int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-    return a.exec();
-}
