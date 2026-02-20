@@ -15,14 +15,70 @@ Vihjeitä:
 */
 
 #include "mainwindow.h"
-#include <QApplication>
+#include "ui_mainwindow.h"
 
-using namespace std;
-
-int main(int argc, char *argv[])
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+    , number1("")
+    , number2("")
+    , operand(0)
+    , state(1)
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-    return a.exec();
+    ui->setupUi(this);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::numberClickHandler()
+{
+    QPushButton *button = qobject_cast<QPushButton*>(sender());
+    QString digit = button->text();
+
+    if (state == 1) {
+        number1 += digit;
+        ui->num1->setText(number1);
+    } else {
+        number2 += digit;
+        ui->num2->setText(number2);
+    }
+
+    qDebug() << "number1:" << number1 << "number2:" << number2;
+}
+
+void MainWindow::on_N0_clicked() { numberClickHandler(); }
+void MainWindow::on_N1_clicked() { numberClickHandler(); }
+void MainWindow::on_N2_clicked() { numberClickHandler(); }
+void MainWindow::on_N3_clicked() { numberClickHandler(); }
+void MainWindow::on_N4_clicked() { numberClickHandler(); }
+void MainWindow::on_N5_clicked() { numberClickHandler(); }
+void MainWindow::on_N6_clicked() { numberClickHandler(); }
+void MainWindow::on_N7_clicked() { numberClickHandler(); }
+void MainWindow::on_N8_clicked() { numberClickHandler(); }
+void MainWindow::on_N9_clicked() { numberClickHandler(); }
+
+void MainWindow::on_add_clicked() { operand = 0; state = 2; }
+
+void MainWindow::on_sub_clicked() { operand = 0; state = 2; }
+
+void MainWindow::on_mul_clicked() { operand = 0; state = 2; }
+
+void MainWindow::on_div_clicked() { operand = 0; state = 2; }
+
+void MainWindow::on_clear_clicked() {
+    state = 1;
+    number1 = "";
+    number2 = "";
+    ui->num1->clear();
+    ui->num2->clear();
+    ui->result->clear();
+}
+
+void MainWindow::on_enter_clicked() {
+    float num1 = number1.toFloat();
+    float num2 = number2.toFloat();
+    float
 }

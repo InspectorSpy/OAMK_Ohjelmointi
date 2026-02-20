@@ -14,7 +14,7 @@ Vihjeitä:
 7. Enter näppäin muuttaa number1 ja number2 Qstring arvot float arvoiksi ja tekee operand muuttujan mukaisen laskutoimituksen ja tallentaa tuloksen result muuttujaan, jonka tulos kirjoitetaan tietysti QLineEdit ikkunaan.
 */
 
-ifndef MAINWINDOW_H
+#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
@@ -22,7 +22,7 @@ ifndef MAINWINDOW_H
 
 QT_BEGIN_NAMESPACE
 
-namespace UI { class MainWindow; }
+namespace Ui { class MainWindow; }
 
 QT_END_NAMESPACE
 
@@ -33,13 +33,31 @@ class MainWindow : public QMainWindow
         MainWindow (QWidget *parent = nullptr);
         ~MainWindow();
     
+    private slots:
+        void numberClickHandler();
+        void on_N0_clicked();
+        void on_N1_clicked();
+        void on_N2_clicked();
+        void on_N3_clicked();
+        void on_N4_clicked();
+        void on_N5_clicked();
+        void on_N6_clicked();
+        void on_N7_clicked();
+        void on_N8_clicked();
+        void on_N9_clicked();
+        void on_add_clicked();
+        void on_sub_clicked();
+        void on_mul_clicked();
+        void on_div_clicked();
+        void on_clear_clicked();
+        void on_enter_clicked();
+
     private:
-        UI::MainWindow *ui;
+        Ui::MainWindow *ui;
         QString number1;
         QString number2;
         int operand;
         int state;
-        void numberCLickHandler();
-}
+};
 
 #endif
