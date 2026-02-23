@@ -71,7 +71,30 @@
                                 </property>
                             </widget>
                         </item>
-                        ..
+                        <item>
+                            <widget class="QPushButton" name="timeLabel1">
+                                <property name="text">
+                                    <string>Player 1: 0:00</string>
+                                </property>
+                                <property name="alignment">
+                                    <set>Qt::AlignCenter</set>
+                                </property>
+                                <property name="font">
+                                    <font>
+                                        <pointsize>14</pointsize>
+                                        <bold>true</bold>
+                                    </font>
+                                </property>
+                            </widget>
+                        </item>
+                        <item>
+                            <widget class="QProgressBar" name="progressBar1">
+                                <property name="value">
+                                    <number>0</number>
+                                </property>
+                                <property
+                            </widget>
+                        </item>
                     </layout>
                 </item>
             </layout>
