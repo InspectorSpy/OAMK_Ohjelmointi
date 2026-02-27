@@ -92,7 +92,7 @@
                                 <property name="value">
                                     <number>0</number>
                                 </property>
-                                <property
+                                <property></property>
                             </widget>
                         </item>
                     </layout>
