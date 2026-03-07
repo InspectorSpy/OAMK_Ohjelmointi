@@ -36,7 +36,7 @@ class MainWindow : public QMainWindow
         ~MainWindow();
 
     private slots:
-        void on_time5Button_Clicked();
+        void on_time5Button_clicked();
         void on_time10Button_clicked();
         void on_startGameButton_clicked();
         void on_switchPlayer1Button_clicked();

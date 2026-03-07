@@ -1,183 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-    <class>MainWindow</class>
-    <widget class="QMainWindow" name="MainWindow">
-        <property name="geometry">
-            <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>500</width>
-                <height>600</height>
-            </rect>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Chess Clock</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="gameInfoLabel">
+      <property name="text">
+       <string>Select game time to begin</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="timeSelectionLayout">
+      <item>
+       <widget class="QPushButton" name="time5Button">
+        <property name="text">
+         <string>5 Minutes</string>
         </property>
-        <property name="windowTitle">
-            <string>Chess Clock</string>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
         </property>
-        <widget class="QWidget" name="centralwidget">
-            <layout class="QVBoxLayout" name="verticalLayout">
-                <item>
-                    <widget class="QLabel" name="gameInfoLabel">
-                        <property name="text">
-                            <string>Select game time to begin</string>
-                        </property>
-                        <property name="alignment">
-                            <set>Qt::AlignCenter</set>
-                        </property>
-                        <property name="font">
-                            <font>
-                                <pointsize>12</pointsize>
-                            </font>
-                        </property>
-                    </widget>
-                </item>
-                <item>
-                    <layout class="QHBoxLayout" name="timeSelectLayout">
-                        <item>
-                            <widget class="QPushButton" name="time5Button">
-                                <property name="text">
-                                    <string>5 Minutes</string>
-                                </property>
-                                <property name="minimumSize">
-                                    <size>
-                                        <width>0</width>
-                                        <height>50</height>
-                                    </size>
-                                </property>
-                            </widget>
-                        </item>
-                        <item>
-                            <widget class="QPushButton" name="time10Button">
-                                <property name="text">
-                                    <string>10 Minutes</string>
-                                </property>
-                                <property name="minimumSize">
-                                    <size>
-                                        <width>0</width>
-                                        <height>50</height>
-                                    </size>
-                                </property>
-                            </widget>
-                        </item>
-                        <item>
-                            <widget class="QPushButton" name="startGameButton">
-                                <property name="text">
-                                    <string>START GAME</string>
-                                </property>
-                                <property name="minimumSize">
-                                    <size>
-                                        <width>0</width>
-                                        <height>60</height>
-                                    </size>
-                                </property>
-                            </widget>
-                        </item>
-                        <item>
-                            <widget class="QPushButton" name="timeLabel1">
-                                <property name="text">
-                                    <string>Player 1: 0:00</string>
-                                </property>
-                                <property name="alignment">
-                                    <set>Qt::AlignCenter</set>
-                                </property>
-                                <property name="font">
-                                    <font>
-                                        <pointsize>14</pointsize>
-                                        <bold>true</bold>
-                                    </font>
-                                </property>
-                            </widget>
-                        </item>
-                        <item>
-                            <widget class="QProgressBar" name="progressBar1">
-                                <property name="value">
-                                    <number>0</number>
-                                </property>
-                                <property name="minimumSize">
-                                    <size>
-                                        <width>0</width>
-                                        <height>30</height>
-                                    </size>
-                                </property>
-                            </widget>
-                        </item>
-                        <item>
-                            <widget class="QPushButton" name="switchPlayer1Button">
-                                <property name="text">
-                                    <string>Player 1 - End Turn</string>
-                                </property>
-                                <property name="minimumSize">
-                                    <size>
-                                        <width>0</width>
-                                        <height>80</height>
-                                    </size>
-                                </property>
-                            </widget>
-                        </item>
-                        <item>
-                            <widget class="Line" name="line">
-                                <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                </property>
-                            </widget>
-                        </item>
-                        <item>
-                            <widget class="QPushButton" name="switchPlayer2Button">
-                                <property name="text">
-                                    <string>Player 2 - End Turn</string>
-                                </property>
-                                <property name="minimumSize">
-                                    <size>
-                                        <width>0</width>
-                                        <height>80</height>
-                                    </size>
-                                </property>
-                            </widget>
-                        </item>
-                        <item>
-                            <widget class="QProgressBar" name="progressBar2">
-                                <property name="value">
-                                    <number>0</number>
-                                </property>
-                                <property name="minimumSize">
-                                    <size>
-                                        <width>0</width>
-                                        <height>30</height>
-                                    </size>
-                                </property>
-                            </widget>
-                        </item>
-                        <item>
-                            <widget class="QLabel" name="timeLabel2">
-                                <property name="text">
-                                    <string>Player 2: 0:00</string>
-                                </property>
-                                <property name="alignment">
-                                    <set>Qt::AlignCenter</set>
-                                </property>
-                                <property name="font">
-                                    <font>
-                                        <pointsize>14</pointsize>
-                                        <bold>true</bold>
-                                    </font>
-                                </property>
-                            </widget>
-                        </item>
-                        <item>
-                            <widget class="QPushButton" name="resetGameButton">
-                                <property name="text">
-                                    <string>RESET GAME</string>
-                                </property>
-                                <property name="minimumSize">
-                                    <size>
-                                        <width>0</width>
-                                        <height>50</height>
-                                    </size>
-                                </property>
-                            </widget>
-                        </item>
-                    </layout>
-                </item>
-            </layout>
-        </widget>
-    </widget>
-</ui> 
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="time10Button">
+        <property name="text">
+         <string>10 Minutes</string>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="startGameButton">
+      <property name="text">
+       <string>START GAME</string>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>60</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="timeLabel1">
+      <property name="text">
+       <string>Player 1: 0:00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QProgressBar" name="progressBar1">
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="switchPlayer1Button">
+      <property name="text">
+       <string>Player 1 - End Turn</string>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>80</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="switchPlayer2Button">
+      <property name="text">
+       <string>Player 2 - End Turn</string>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>80</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QProgressBar" name="progressBar2">
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="timeLabel2">
+      <property name="text">
+       <string>Player 2: 0:00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="resetGameButton">
+      <property name="text">
+       <string>RESET GAME</string>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>50</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
