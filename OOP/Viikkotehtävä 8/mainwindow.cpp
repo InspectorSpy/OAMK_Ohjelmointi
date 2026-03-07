@@ -100,32 +100,85 @@ void MainWindow::startGame()
 
     gameTimer->start(1000);
 
-    QDebug() << "Game start. Player 1's turn";
+    qDebug() << "Game start. Player 1's turn";
 }
 
 void MainWindow::on_switchPlayer1Button_clicked()
 {
+    if (!gameRunning || currentPlayer != 1) return;
 
+    currentPlayer = 2;
+    setGameInfoText("Player 2's turn", 14);
+
+    ui->switchPlayer1Button->setEnabled(false);
+    ui->switchPlayer2Button->setEnabled(true);
+
+    qDebug() << "Switched to player 2";
 }
 
 void MainWindow::on_switchPlayer2Button_clicked()
 {
+    if (!gameRunning || currentPlayer != 2) return;
 
+    currentPlayer = 1;
+    setGameInfoText("Player 1's turn", 14);
+
+    ui->switchPlayer1Button->setEnabled(true);
+    ui->switchPlayer2Button->setEnabled(false);
+
+    qDebug() << "Switched to player 1";
 }
 
 void MainWindow::updateTime()
 {
+    if (!gameRunning) return;
 
+    if (currentPlayer == 1) {
+        player1Time--;
+        if (player1Time <= 0) {
+            player1Time = 0;
+            endGame(2);
+            return;
+        }
+    } else {
+        player2Time--;
+        if (player2Time <= 0) {
+            player2Time = 0;
+            endGame(1);
+            return;
+        }
+    }
+
+    updateProgressBar();
+
+    qDebug() << "Player 1:" << player1Time << "s, Player 2:" << player2Time << "s";
 }
 
 void MainWindow::updateProgressBar()
 {
+    if (gameTime > 0) {
+        int progress1 = (player1Time * 100) / gameTime;
+        int progress2 = (player2Time * 100) / gameTime;
 
+        ui->progressBar1->setValue(progress1);
+        ui->progressBar2->setValue(progress2);
+
+        int min1 = player1Time / 60;
+        int sec1 = player1Time % 60;
+        int min2 = player2Time / 60;
+        int sec2 = player2Time % 60;
+
+        ui->timeLabel1->setText(QString("Player 1: %1:%2").arg(min1).arg(sec1, 2, 10, QChar('0')));
+        ui->timeLabel2->setText(QString("Player 2: %1:%2").arg(min2).arg(sec2, 2, 10, QChar('0')));
+    }
 }
 
-void MainWindow::setGameInfoText()
+void MainWindow::setGameInfoText(QString text, short fontSize)
 {
-
+    ui->gameInfoLabel->setText(text);
+    QFont font = ui->gameInfoLabel->font();
+    font.setPointSize(fontSize);
+    ui->gameInfoLabel->setFont(font);
 }
 
 void MainWindow::endGame()
