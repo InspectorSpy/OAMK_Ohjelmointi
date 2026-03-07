@@ -181,12 +181,44 @@ void MainWindow::setGameInfoText(QString text, short fontSize)
     ui->gameInfoLabel->setFont(font);
 }
 
-void MainWindow::endGame()
+void MainWindow::endGame(int winner)
 {
+    gameRunning = false;
+    gameTimer->stop();
 
+    QString winnerText = QString("TIME's UP! Player %1 wins!").arg(winner);
+    setGameInfoText(winnerText, 16);
+
+    ui->switchPlayer1Button->setEnabled(false);
+    ui->switchPlayer2Button->setEnabled(false);
+    ui->resetGameButton->setEnabled(true);
+
+    qDebug() << "Game over. Winner: Player" << winner;
 }
 
 void MainWindow::on_resetGameButton_clicked()
 {
-    
+    gameTime = 0;
+    player1Time = 0;
+    player2Time = 0;
+    currentPlayer = 1;
+    gameRunning = false;
+
+    gameTimer->stop();
+
+    ui->progressBar1->setValue(0);
+    ui->progressBar2->setValue(0);
+    ui->timeLabel1->setText("Player 1: 0:00");
+    ui->timeLabel2->setText("Player 2: 0:00");
+
+    setGameInfoText("Select game time", 12);
+
+    ui->time5Button->setEnabled(true);
+    ui->time10Button->setEnabled(true);
+    ui->startGameButton->setEnabled(false);
+    ui->switchPlayer1Button->setEnabled(false);
+    ui->switchPlayer2Button->setEnabled(false);
+    ui->resetGameButton->setEnabled(false);
+
+    qDebug() << "Game reset";
 }
