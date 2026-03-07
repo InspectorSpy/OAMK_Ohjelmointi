@@ -7,7 +7,7 @@ TEMPLATE = app
 
 SOURCES += \
     main.cpp \
-    chessclock.cpp
+    mainwindow.cpp
 
 HEADERS += \
     mainwindow.h \
